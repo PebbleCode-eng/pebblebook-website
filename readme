@@ -1,0 +1,57 @@
+# PebbleBook Website
+
+A beautiful landing page for PebbleBook — an app for remembering childhood, pebble by pebble.
+
+## What's Inside
+
+- **index.html** — The complete landing page with email signup
+- **Responsive design** — Works on desktop, tablet, and mobile
+- **No dependencies** — Pure HTML, CSS, and JavaScript
+
+## Email Signups
+
+Currently, email submissions are logged to browser console. To capture emails for real:
+
+### Option 1: Mailchimp (Recommended)
+1. Create a free Mailchimp account
+2. Set up an audience
+3. Generate an embedded form code
+4. Replace the signup form in index.html
+
+### Option 2: Formspree
+1. Go to formspree.io
+2. Create a new form pointing to your email
+3. Update the form's `action` attribute
+
+### Option 3: Basin
+1. Go to basin.io
+2. Create a form
+3. Update the form to submit to their endpoint
+
+## Deployment
+
+This site is deployed on GitHub Pages. To set it up:
+
+1. Enable GitHub Pages in repository settings
+2. Choose `main` branch as source
+3. Point your domain to GitHub Pages
+
+## Custom Domain
+
+In Namecheap:
+1. Go to DNS settings
+2. Add these records:
+   - Type: A, Name: @, Value: `185.199.108.153` (and 3 other GitHub IP addresses)
+   - Type: CNAME, Name: www, Value: `yourusername.github.io`
+
+See GitHub Pages docs for current IP addresses.
+
+## Next Steps
+
+- Integrate email collection service
+- Add analytics
+- Deploy and launch
+
+---
+
+Built with ❤️ for PebbleBook
