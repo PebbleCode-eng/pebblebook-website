@@ -871,27 +871,34 @@ async function handleSignup() {
   submitBtn.textContent = 'Saving...';
 
   try {
-    // Insert email into Supabase
+    // Insert email into Supabase using REST API with proper headers
     const response = await fetch(`${SUPABASE_URL}/rest/v1/signups`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         'apikey': SUPABASE_ANON_KEY,
-        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+        'Prefer': 'return=minimal'
       },
       body: JSON.stringify({ email })
     });
 
     if (!response.ok) {
-      const error = await response.json();
-      if (error.code === '23505') {
-        errorMsg.textContent = 'This email is already on our waitlist!';
-      } else {
-        errorMsg.textContent = 'Something went wrong. Please try again.';
-      }
+      let errorMsg_text = 'Something went wrong. Please try again.';
+      try {
+        const error = await response.json();
+        if (error.code === '23505' || error.message?.includes('duplicate')) {
+          errorMsg_text = 'This email is already on our waitlist!';
+        } else if (error.message) {
+          errorMsg_text = error.message;
+        }
+      } catch (e) {}
+      
+      errorMsg.textContent = errorMsg_text;
       errorMsg.style.display = 'block';
       submitBtn.disabled = false;
       submitBtn.textContent = 'Notify me';
+      console.error('Supabase error:', response.status);
       return;
     }
 
