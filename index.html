@@ -604,6 +604,10 @@
     border-radius: 0;
   }
   .signup-form button:hover { background: var(--skogs); }
+  .signup-form button:disabled {
+    background: var(--salvie);
+    cursor: not-allowed;
+  }
 
   .signup-note {
     font-size: 0.72rem;
@@ -618,6 +622,15 @@
     font-size: 1.2rem;
     color: var(--salvie);
     padding: 1rem;
+  }
+
+  .error-msg {
+    display: none;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.85rem;
+    color: #c0392b;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
   }
 
   /* FOOTER */
@@ -691,7 +704,7 @@
   <div class="hero-text fade-up">
     <p class="eyebrow">Coming soon</p>
     <h1>A childhood<br>remembered,<br><em>pebble by pebble.</em></h1>
-    <p class="hero-body">PebbleBook helps busy parents preserve the everyday details that make a childhood — the mispronounced words, the obsessions, the small moments — before they're forgotten.</p>
+    <p class="hero-body">PebbleBook helps busy parents preserve the everyday details that make a childhood — the mispronounced words, the obsessions, the small moments — before they're forgot[...]
     <a href="#signup" class="hero-cta">Join the waitlist</a>
   </div>
   <div class="hero-visual fade-up">
@@ -738,7 +751,7 @@
     <div class="feature-item fade-up">
       <span class="feature-number">01</span>
       <h3 class="feature-title">One question a week</h3>
-      <p class="feature-body">Age-optimised prompts remove the blank page entirely. You don't think about what to write — you simply answer. Two minutes, once a week, and the details are saved forever.</p>
+      <p class="feature-body">Age-optimised prompts remove the blank page entirely. You don't think about what to write — you simply answer. Two minutes, once a week, and the details are saved [...]
     </div>
     <div class="feature-item fade-up">
       <span class="feature-number">02</span>
@@ -748,7 +761,7 @@
     <div class="feature-item fade-up">
       <span class="feature-number">03</span>
       <h3 class="feature-title">The book, already designed</h3>
-      <p class="feature-body">A minimalist grid system quietly arranges everything as you go. When you're ready, one tap exports a print-ready coffee-table book — no formatting, no decisions.</p>
+      <p class="feature-body">A minimalist grid system quietly arranges everything as you go. When you're ready, one tap exports a print-ready coffee-table book — no formatting, no decisions.</[...]
     </div>
     <div class="feature-item fade-up">
       <span class="feature-number">04</span>
@@ -763,7 +776,7 @@
   <div class="fade-up" style="max-width:1100px; margin:0 auto; padding: 0 2.5rem;">
     <p class="callout-label">The sibling problem</p>
     <h2 class="callout-title">The third child deserves<br><em>the same story.</em></h2>
-    <p class="callout-body">Documentation drops significantly with each additional child. Not because parents love them less — but because life gets fuller. PebbleBook is built specifically for this reality.</p>
+    <p class="callout-body">Documentation drops significantly with each additional child. Not because parents love them less — but because life gets fuller. PebbleBook is built specifically for[...]
   </div>
   <div class="fade-up" style="max-width:1100px; margin:0 auto; padding: 0 2.5rem;">
     <div class="sibling-visual">
@@ -800,9 +813,9 @@
     </div>
   </div>
   <div class="book-text fade-up">
-    <p class="callout-label" style="color:var(--salvie); font-family:'DM Sans',sans-serif; font-weight:300; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:1.2rem;">The printed book</p>
+    <p class="callout-label" style="color:var(--salvie); font-family:'DM Sans',sans-serif; font-weight:300; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:1.2re[...]
     <h2 class="book-title">From app to table,<br><em>without the labour.</em></h2>
-    <p class="book-body">Everything you've saved builds quietly into a beautifully designed book. Select a date range, see the cost instantly, and order — a printed keepsake your child will one day read to understand they were truly noticed.</p>
+    <p class="book-body">Everything you've saved builds quietly into a beautifully designed book. Select a date range, see the cost instantly, and order — a printed keepsake your child will one[...]
   </div>
 </section>
 
@@ -813,9 +826,10 @@
     <h2 class="signup-title">Be the first to<br><em>start remembering.</em></h2>
     <p class="signup-subtitle">PebbleBook is in development. Leave your email and we'll let you know when it's ready — no spam, just one message when the time comes.</p>
 
+    <div id="errorMsg" class="error-msg"></div>
     <div class="signup-form" id="signupForm">
       <input type="email" id="emailInput" placeholder="your@email.com" required>
-      <button type="button" onclick="handleSignup()">Notify me</button>
+      <button type="button" id="submitBtn" onclick="handleSignup()">Notify me</button>
     </div>
     <p class="signup-note">We respect your privacy. Unsubscribe anytime.</p>
     <p class="success-msg" id="successMsg">You're on the list. We'll be in touch.</p>
@@ -829,19 +843,69 @@
 </footer>
 
 <script>
-function handleSignup() {
+const SUPABASE_URL = 'https://dvpmjzsbrsdmzuqtsiaz.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable__9V23BEEUXtd_dJpZ2OZ0A_g1IraVEp';
+
+async function handleSignup() {
   const email = document.getElementById('emailInput').value;
   const form = document.getElementById('signupForm');
   const success = document.getElementById('successMsg');
   const note = document.querySelector('.signup-note');
+  const errorMsg = document.getElementById('errorMsg');
+  const submitBtn = document.getElementById('submitBtn');
+
+  // Clear previous errors
+  errorMsg.style.display = 'none';
+  errorMsg.textContent = '';
+
+  // Validate email
   if (!email || !email.includes('@')) {
     document.getElementById('emailInput').style.borderColor = '#c0392b';
+    errorMsg.textContent = 'Please enter a valid email address.';
+    errorMsg.style.display = 'block';
     return;
   }
-  form.style.display = 'none';
-  note.style.display = 'none';
-  success.style.display = 'block';
-  console.log('Signup:', email);
+
+  // Disable button and show loading state
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Saving...';
+
+  try {
+    // Insert email into Supabase
+    const response = await fetch(`${SUPABASE_URL}/rest/v1/signups`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+      },
+      body: JSON.stringify({ email })
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      if (error.code === '23505') {
+        errorMsg.textContent = 'This email is already on our waitlist!';
+      } else {
+        errorMsg.textContent = 'Something went wrong. Please try again.';
+      }
+      errorMsg.style.display = 'block';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Notify me';
+      return;
+    }
+
+    // Success!
+    form.style.display = 'none';
+    note.style.display = 'none';
+    success.style.display = 'block';
+  } catch (err) {
+    console.error('Error:', err);
+    errorMsg.textContent = 'Network error. Please check your connection and try again.';
+    errorMsg.style.display = 'block';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Notify me';
+  }
 }
 
 document.getElementById('emailInput').addEventListener('keydown', function(e) {
