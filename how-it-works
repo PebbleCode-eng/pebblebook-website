@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How it works — PebbleBook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="assets/PebbleLogo.jpg" alt="PebbleBook" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="how-it-works.html" class="active">How it works</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+    </ul>
+    <a href="index.html#signup" class="nav-cta">Join waitlist</a>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <section class="subpage-hero">
+    <p class="section-eyebrow">How it works</p>
+    <h1>Four steps to a childhood remembered</h1>
+    <p>PebbleBook is designed to fit into real life — not demand more of it.</p>
+  </section>
+
+  <!-- STEPS (full detail) -->
+  <section class="hiw-steps">
+    <div class="hiw-step">
+      <div class="hiw-step-number">1</div>
+      <div class="hiw-step-content">
+        <h2>Sign up and register your children</h2>
+        <p>Create a profile for one child or all of them at once. Each child gets their own colour, their own timeline, their own story. You can add more children any time — PebbleBook is built for families that grow.</p>
+      </div>
+    </div>
+
+    <div class="hiw-step">
+      <div class="hiw-step-number">2</div>
+      <div class="hiw-step-content">
+        <h2>Choose a child and answer a prompt</h2>
+        <p>We give you age-tailored questions that spark the kind of memories you'd otherwise forget. If one doesn't land, swipe left — we'll find another. Switch to sibling mode to answer for all your children at once, and we'll save each response individually.</p>
+        <div class="prompt-examples">
+          <div class="prompt-example">"Describe what happened the last time your child tried to play with another kid at the park."</div>
+          <div class="prompt-example">"Has [NAME] said something funny lately?"</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hiw-step">
+      <div class="hiw-step-number">3</div>
+      <div class="hiw-step-content">
+        <h2>We nudge — we never shame</h2>
+        <p>You choose the commitment level that works for your life. We'll send a gentle reminder when it feels right. We're here to help you capture what you can, not to make you feel bad about what you missed.</p>
+      </div>
+    </div>
+
+    <div class="hiw-step">
+      <div class="hiw-step-number">4</div>
+      <div class="hiw-step-content">
+        <h2>Watch the story grow</h2>
+        <p>Everything you write lives in a timeline — your child's story, in your words, sorted by date. Over time it becomes something extraordinary: a record of who they actually were, in their own era. Pebble by pebble, a book takes shape.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="signup-section" id="signup">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="signup-inner">
+      <h2>Be the first to start remembering.</h2>
+      <p>PebbleBook is in development. Leave your email and we'll let you know when it's ready — no spam, just one message when the time comes.</p>
+      <div class="signup-form">
+        <input type="email" placeholder="your@email.com" />
+        <button type="submit">Notify me</button>
+      </div>
+      <p class="signup-privacy">We respect your privacy. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="assets/PebbleLogo.jpg" alt="PebbleBook" /> />
+    <p>© 2026 PebbleBook. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
