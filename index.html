@@ -1,163 +1,205 @@
 <!DOCTYPE html>
-<html lang="no">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PebbleBook - A childhood remembered pebble by pebble</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PebbleBook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-    <header class="container">
-        <nav>
-            <a href="/" class="logo">pebblebook</a>
-            <ul class="nav-links">
-                <li><a href="/om-oss.html">Om oss</a></li>
-                <li><a href="/blogg/">Blogg</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <img src="assets/PebbleLogo.jpg" alt="PebbleBook" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="how-it-works.html">How it works</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+    </ul>
+    <a href="#signup" class="nav-cta">Join waitlist</a>
+  </nav>
 
-    <section class="container hero">
-        <h1>A childhood remembered, <br> pebble by pebble.</h1>
-        <p>PebbleBook is a digital baby and childhood memory app designed for busy parents. Gather memories, pebble by pebble, and you are slowly writing the story of them.</p>
-        
-        <form class="waitlist-form" id="supabase-form-top">
-            <input type="email" placeholder="Your email" required>
-            <button type="submit">JOIN WAITLIST</button>
-        </form>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>
+        A childhood<br>remembered
+        <em>pebble by pebble.</em>
+      </h1>
+      <p>PebbleBook is a baby and childhood memory app designed for busy parents. It is The Frictionless Memory Keeper. The anti-scrapbook. It’s for the mom who loves the 
+          idea of baby books but hates the guilt of an empty one. Gather memories, pebble by pebble, and you are slowly writing the story of them.</p>
+      <form id="supabase-form-top" class="hero-form">
+        <input type="email" placeholder="your@email.com" required />
+        <button type="submit" class="btn-primary">Join the waitlist</button>
+      </form>
+    </div>
+  </section>
 
-    <section class="container">
-        <h2 class="features-intro">Helping you commemorate your children's childhood</h2>
-        <div class="features-grid">
-            <div class="feature-card">
-                <span class="number">#1</span>
-                <p>We give you nudges so you remember to write down the things we think we will always remember. Just in case we don't.</p>
-            </div>
-            <div class="feature-card">
-                <span class="number">#2</span>
-                <p>The app works beautifully with one child, but we are also built especially for multiple children. You can even enter memories for them all at the same time that is saved individually.</p>
-            </div>
-            <div class="feature-card">
-                <span class="number">#3</span>
-                <p>Everything accumulates into a living timeline - a record of who they actually were, in their own era, told in your words. Pebble by pebble, a book takes shape.</p>
-            </div>
+  <!-- FEATURES -->
+  <section class="features">
+    <div class="features-inner">
+      <h2 class="features-heading">Helping you commemorate your children's childhood</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-number">#1</div>
+          <h3>Gentle nudges</h3>
+          <p>We give you nudges so you remember to write down the things we think we will always remember. Just in case we don't.</p>
         </div>
-    </section>
+        <div class="feature-card">
+          <div class="feature-number">#2</div>
+          <h3>Built for siblings</h3>
+          <p>The app works beautifully with one child, but we are also built especially for multiple children. You can even enter memories for them all at the same time that is saved individually.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-number">#3</div>
+          <h3>Their story, forever</h3>
+          <p>Everything accumulates into a living timeline — a record of who they actually were, in their own era, told in your words. Pebble by pebble, a book takes shape.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <section class="container visual-break">
-        <div class="image-gallery">
+  <!-- MANIFESTO -->
+  <section class="manifesto">
+    <p class="manifesto-quote">
+      It's impossible to cherish every stone, gravel and rock that make up a childhood.<br>
+      But we can try to save some of the pebbles.
+    </p>
+    <p class="manifesto-tagline">Pebble by pebble</p>
+  </section>
+
+  <!-- PHOTO STRIP -->
+  <div class="photo-strip">
+    <div class="photo-strip-inner">
             <img src="assets/Family trip.jpg" alt="Family_trip">
             <img src="assets/Pebble stack.jpg" alt="Pebble_stack">
             <img src="assets/Family photo.jpg" alt="FamilyPhoto">
+    </div>
+  </div>
+
+  <!-- HOW IT WORKS -->
+  <section class="how-it-works">
+    <p class="section-eyebrow">How it works</p>
+    <h2>Four steps to a childhood remembered</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <div class="step-content">
+          <h4>Sign up your children</h4>
+          <p>Create profiles for one child or all of them. PebbleBook is ready for the whole family from day one.</p>
         </div>
-        <p class="quote">"It's impossible to cherish every stone, gravel and rock that make up a childhood. <br>But we can try to save some of the pebbles."</p>
-    </section>
-
-    <section class="container how-it-works-section">
-        <div class="how-it-works-grid">
-
-            <div>
-                <h2 style="font-family: var(--font-serif); font-size: 32px; margin-bottom: 24px;">How it works</h2>
-                <ul class="steps">
-                    <li class="step-item">
-                        <h3>#1 Sign up and register your child / children.</h3>
-                    </li>
-                    <li class="step-item">
-                        <h3>#2 Choose which child you want to collect pebbles for.</h3>
-                        <p style="font-size: 15px; color: var(--text-muted);">We provide age-customized questions that prompts your memory. If the question doesn't immediately spark a thought, swipe left and we'll give you a new question.</p>
-                        <span class="step-example">"Describe what happened the last time your child tried to play with another kid at the park"</span>
-                        <span class="step-example">"Has NAME said something funny lately?"</span>
-                    </li>
-                    <li class="step-item">
-                        <h3>#3 Gentle nudges, zero shame.</h3>
-                        <p style="font-size: 15px; color: var(--text-muted);">We will give you a gentle nudge so you remember to make notes, but you choose the commitment level that works for you and your life. We're not here to shame, we're here to help.</p>
-                    </li>
-                    <li class="step-item">
-                        <h3>#4 Everything you write will be perpetuated in a timeline.</h3>
-                        <p style="font-size: 15px; color: var(--text-muted);">Showing you your childs story. Written pebble by pebble.</p>
-                    </li>
-                </ul>
-            </div>
-
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <div class="step-content">
+          <h4>Answer a prompt</h4>
+          <p>Choose a child and we'll offer an age-tailored question. Swipe if it doesn't spark anything — we'll find one that does. Or switch to sibling mode and answer for them all at once.</p>
         </div>
-    </section>
-
-    <footer>
-        <div class="container footer-cta">
-            <h2>Be the first to start remembering.</h2>
-            <p>PebbleBook is in development. Leave your email and we'll let you know when it's ready - no spam, just one message when the time comes.</p>
-            
-            <form class="waitlist-form" id="supabase-form-bottom">
-                <input type="email" placeholder="your@email.com" required>
-                <button type="submit">NOTIFY ME</button>
-            </form>
-            <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <div class="step-content">
+          <h4>We nudge, not shame</h4>
+          <p>Set the commitment level that suits your life. We'll send a gentle reminder now and then — we're here to help, not to judge.</p>
         </div>
-    </footer>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <div class="step-content">
+          <h4>Watch the story grow</h4>
+          <p>Everything you write lives in a timeline — your child's story, written pebble by pebble, in your own words.</p>
+        </div>
+      </div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
-    <script>
-    // 1. Initialiser Supabase (Putt inn dine egne verdier mellom apostrofene)
+    <div class="prompts">
+      <p class="prompts-label">Example prompts</p>
+      <div class="prompt-cards">
+        <div class="prompt-card">
+          <span>Describe what happened the last time your child tried to play with another kid at the park.</span>
+        </div>
+        <div class="prompt-card">
+          <span>Has [NAME] said something funny lately?</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIGNUP -->
+  <section class="signup-section" id="signup">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+    <div class="signup-inner">
+      <h2>Be the first to start remembering.</h2>
+      <p>PebbleBook is in development. Leave your email and we'll let you know when it's ready — no spam, just one message when the time comes.</p>
+      <form id="supabase-form-bottom" class="signup-form">
+        <input type="email" placeholder="your@email.com" required />
+        <button type="submit">Notify me</button>
+      </form>
+      <p class="signup-privacy">We respect your privacy. Unsubscribe anytime.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="assets/PebbleLogo.jpg" alt="PebbleBook" />
+    <p>© 2026 PebbleBook. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
     const supabaseUrl = 'https://dvpmjzsbrsdmzuqtsiaz.supabase.co';
     const supabaseKey = 'sb_publishable__9V23BEEUXtd_dJpZ2OZ0A_g1IraVEp';
-    const supabase = supabase.createClient(supabaseUrl, supabaseKey);
+    const { createClient } = supabase;
+    const client = createClient(supabaseUrl, supabaseKey);
 
-    // 2. Funksjon for å håndtere registrering av e-post
     async function handleWaitlistSubmit(event) {
-        event.preventDefault(); // Hindrer siden i å laste på nytt
+      event.preventDefault();
 
-        // Henter e-posten fra inputfeltet i det skjemaet som ble sendt inn
-        const emailInput = event.target.querySelector('input[type="email"]');
-        const email = emailInput.value.trim().toLowerCase(); // Sørger for små bokstaver og fjerner mellomrom
-        const button = event.target.querySelector('button');
+      const emailInput = event.target.querySelector('input[type="email"]');
+      const email = emailInput.value.trim().toLowerCase();
+      const button = event.target.querySelector('button');
+      const originalText = button.textContent;
 
-        // Endre tekst på knappen mens vi lagrer
-        const originalButtonText = button.textContent;
-        button.textContent = 'Saving...';
-        button.disabled = true;
+      button.textContent = 'Saving...';
+      button.disabled = true;
 
-        try {
-            // Sett inn e-posten i Supabase-tabellen din ('signups')
-            const { data, error } = await supabase
-                 .from('signups') 
-                 .insert([{ email: email }]);
+      try {
+        const { error } = await client
+          .from('signups')
+          .insert([{ email }]);
 
-             if (error) {
-                 // Sjekker om feilen skyldes at e-posten allerede eksisterer (Supabase feilkode 23505 betyr duplikat)
-                 if (error.code === '23505' || (error.message && error.message.includes('unique'))) {
-                     alert('This email is already signed up! 🎉');
-                 } else {
-                     // Hvis det er en annen feil fra Supabase, viser vi den nøyaktige meldingen
-                     alert('Supabase Error: ' + error.message + ' (Code: ' + error.code + ')');
-                 }
-                 throw error;
-             }
-
-             // Suksess!
-             button.textContent = 'Success! 🎉';
-             emailInput.value = ''; // Tømmer feltet
-                
-        } catch (error) {
-            console.error('Feil ved registrering:', error);
-            button.textContent = originalButtonText;
+        if (error) {
+          if (error.code === '23505' || (error.message && error.message.includes('unique'))) {
+            button.textContent = 'Already signed up!';
+          } else {
+            alert('Something went wrong: ' + error.message);
+            button.textContent = originalText;
             button.disabled = false;
+          }
+          return;
         }
+
+        // Success
+        button.textContent = 'You\'re on the list ✓';
+        emailInput.value = '';
+
+      } catch (err) {
+        console.error('Signup error:', err);
+        button.textContent = originalText;
+        button.disabled = false;
+      }
     }
 
-    // 3. Koble funksjonen til BEGGE skjemaene på siden (toppen og bunnen)
     const topForm = document.getElementById('supabase-form-top');
     const bottomForm = document.getElementById('supabase-form-bottom');
-
     if (topForm) topForm.addEventListener('submit', handleWaitlistSubmit);
     if (bottomForm) bottomForm.addEventListener('submit', handleWaitlistSubmit);
-    </script>
+  </script>
 </body>
 </html>
