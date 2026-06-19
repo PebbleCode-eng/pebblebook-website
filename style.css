@@ -1,0 +1,324 @@
+/* ==========================================================================
+   💥 DESIGN SYSTEM & VARIABLER
+   ========================================================================== */
+:root {
+    --bg-color: #F8F5F0;       /* Lun, beige bakgrunn fra slide 1 [cite: 1, 8] */
+    --text-dark: #2C3E35;      /* Dyp skogsgrønn/mørk tone fra skogsbildene */
+    --accent-blue: #1A365D;    /* Dyp blå fra Memory Lane [cite: 1, 8] */
+    --text-muted: #606F66;     /* Nedtonet tekstfarge */
+    --font-sans: 'Plus Jakarta Sans', sans-serif;
+    --font-serif: 'Lora', serif; /* Gir Substack-følelsen på tekst og titler */
+}
+
+/* ==========================================================================
+   RESET & GENERELLE STILER
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* ==========================================================================
+   NAVIGASJON (Gjenbrukbar på alle sider)
+   ========================================================================== */
+header {
+    padding: 24px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 16px;
+    transition: opacity 0.2s;
+}
+
+.nav-links a:hover {
+    opacity: 0.7;
+}
+
+/* ==========================================================================
+   VENTELISTE FORMS (Gjenbrukbar)
+   ========================================================================== */
+.waitlist-form {
+    display: flex;
+    gap: 12px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.waitlist-form input[type="email"] {
+    flex: 1;
+    padding: 16px;
+    border: 1px solid #D1C9BC;
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: #FFF;
+    font-family: var(--font-sans);
+}
+
+.waitlist-form button {
+    background-color: var(--accent-blue);
+    color: white;
+    border: none;
+    padding: 16px 28px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: var(--font-sans);
+}
+
+.waitlist-form button:hover {
+    background-color: #0F2340;
+}
+
+/* ==========================================================================
+   FORSIDE / HERO SEKSJON
+   ========================================================================== */
+.hero {
+    padding: 80px 0;
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-family: var(--font-serif);
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: var(--text-dark);
+}
+
+.hero p {
+    font-size: 18px;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+}
+
+/* ==========================================================================
+   VERDIFORSLAG (3 Kolonner)
+   ========================================================================== */
+.features-intro {
+    text-align: center;
+    font-family: var(--font-serif);
+    font-size: 28px;
+    margin-bottom: 48px;
+    padding-top: 60px;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-bottom: 80px;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 32px;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.03);
+}
+
+.feature-card .number {
+    font-family: var(--font-serif);
+    font-size: 24px;
+    color: var(--accent-blue);
+    margin-bottom: 16px;
+    display: block;
+}
+
+/* ==========================================================================
+   VISUELL PAUSE (Bilder & Sitat)
+   ========================================================================== */
+.visual-break {
+    margin: 80px 0;
+    text-align: center;
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.quote {
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 22px;
+    max-width: 700px;
+    margin: 0 auto;
+    color: var(--text-dark);
+}
+
+/* ==========================================================================
+   HOW IT WORKS & MEMORY LANE
+   ========================================================================== */
+.how-it-works-section {
+    padding: 80px 0;
+}
+
+.how-it-works-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.memory-lane-mockup img {
+    width: 100%;
+    max-width: 400px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 24px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+.steps {
+    list-style: none;
+}
+
+.step-item {
+    margin-bottom: 32px;
+}
+
+.step-item h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    color: var(--accent-blue);
+}
+
+.step-example {
+    display: block;
+    font-style: italic;
+    background: rgba(255,255,255,0.6);
+    padding: 12px;
+    border-left: 3px solid var(--accent-blue);
+    margin-top: 8px;
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   SUBSTACK / BLOGG-SPESIFIKK STYLING
+   ========================================================================== */
+.blog-post-wrapper {
+    max-width: 680px; /* Den klassiske, smale Substack-bredden for god lesbarhet */
+    margin: 60px auto;
+}
+
+.blog-post-header h1 {
+    font-family: var(--font-serif);
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.blog-post-meta {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+}
+
+.blog-content {
+    font-family: var(--font-serif); /* Serif på selve brødteksten i artiklene */
+    font-size: 19px;
+    line-height: 1.65;
+    color: #1A2E22;
+}
+
+.blog-content p {
+    margin-bottom: 24px;
+}
+
+.blog-content img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 32px 0;
+}
+
+/* ==========================================================================
+   FOOTER (Gjenbrukbar)
+   ========================================================================== */
+footer {
+    background-color: rgba(0, 0, 0, 0.02);
+    padding: 80px 0;
+    text-align: center;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.footer-cta h2 {
+    font-family: var(--font-serif);
+    font-size: 32px;
+    margin-bottom: 16px;
+}
+
+.footer-cta p {
+    color: var(--text-muted);
+    margin-bottom: 32px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.privacy-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 16px;
+}
+
+/* ==========================================================================
+   RESPONSIVITET (Mobilvennlig design)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .hero h1 { font-size: 36px; }
+    .how-it-works-grid { grid-template-columns: 1fr; gap: 40px; }
+    .waitlist-form { flex-direction: column; }
+    .blog-post-header h1 { font-size: 32px; }
+}
