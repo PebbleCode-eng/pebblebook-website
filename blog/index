@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog — PebbleBook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="nav-logo">
+      <img src="../assets/pebblebook logo.png" alt="PebbleBook" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="../how-it-works.html">How it works</a></li>
+      <li><a href="index.html" class="active">Blog</a></li>
+    </ul>
+    <a href="../index.html#signup" class="nav-cta">Join waitlist</a>
+  </nav>
+
+  <!-- BLOG HEADER -->
+  <section class="subpage-hero">
+    <p class="section-eyebrow">From the journal</p>
+    <h1>On memory, childhood, and the stories we keep</h1>
+    <p>Thoughts on parenting, remembering, and why the small things matter most.</p>
+  </section>
+
+  <!-- BLOG GRID -->
+  <section class="blog-grid-section">
+    <div class="blog-grid">
+
+      <!-- Article 1 — placeholder -->
+      <article class="blog-card">
+        <div class="blog-card-image-placeholder">Image</div>
+        <div class="blog-card-body">
+          <p class="blog-card-date">Coming soon</p>
+          <h2 class="blog-card-title">Why we forget — and why that's okay</h2>
+          <p class="blog-card-excerpt">The science of memory and why even the most devoted parents can't hold onto everything. And why a pebble is enough.</p>
+          <a href="#" class="blog-card-link">Read more →</a>
+        </div>
+      </article>
+
+      <!-- Article 2 — placeholder -->
+      <article class="blog-card">
+        <div class="blog-card-image-placeholder">Image</div>
+        <div class="blog-card-body">
+          <p class="blog-card-date">Coming soon</p>
+          <h2 class="blog-card-title">The second child problem — and how to solve it</h2>
+          <p class="blog-card-excerpt">Research shows parents document later children far less. Here's why it happens, and a low-pressure way to close the gap.</p>
+          <a href="#" class="blog-card-link">Read more →</a>
+        </div>
+      </article>
+
+      <!-- Article 3 — placeholder -->
+      <article class="blog-card">
+        <div class="blog-card-image-placeholder">Image</div>
+        <div class="blog-card-body">
+          <p class="blog-card-date">Coming soon</p>
+          <h2 class="blog-card-title">The question your child will one day ask</h2>
+          <p class="blog-card-excerpt">Every child eventually wants to know: who was I, before I could remember myself? The answer lives in your words.</p>
+          <a href="#" class="blog-card-link">Read more →</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <img src="../assets/pebblebook logo.png" alt="PebbleBook" /> />
+    <p>© 2026 PebbleBook. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
