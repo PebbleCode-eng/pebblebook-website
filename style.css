@@ -206,10 +206,8 @@ nav {
 }
 
 .how-it-works-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
+    max-width: 650px; /* Gjør tekstkolonnen smal og fin å lese, akkurat som Substack */
+    margin: 0 auto;
 }
 
 .memory-lane-mockup img {
