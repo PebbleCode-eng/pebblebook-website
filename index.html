@@ -53,9 +53,9 @@
 
     <section class="container visual-break">
         <div class="image-gallery">
-            <img src="assets/forest1.jpg" alt="Skogsti">
-            <img src="assets/ocean.jpg" alt="Hav og fjell">
-            <img src="assets/forest2.jpg" alt="Skog med sollys">
+            <img src="assets/Family trip.jpg" alt="Family_trip">
+            <img src="assets/Pebble stack.jpg" alt="Pebble_stack">
+            <img src="assets/Family photo.jpg" alt="FamilyPhoto">
         </div>
         <p class="quote">"It's impossible to cherish every stone, gravel and rock that make up a childhood. <br>But we can try to save some of the pebbles."</p>
     </section>
@@ -116,7 +116,7 @@
 
         // Henter e-posten fra inputfeltet i det skjemaet som ble sendt inn
         const emailInput = event.target.querySelector('input[type="email"]');
-        const email = emailInput.value;
+        const email = emailInput.value.trim().toLowerCase(); // Sørger for små bokstaver og fjerner mellomrom
         const button = event.target.querySelector('button');
 
         // Endre tekst på knappen mens vi lagrer
@@ -130,15 +130,23 @@
                  .from('signups') 
                  .insert([{ email: email }]);
 
-             if (error) throw error;
+             if (error) {
+                 // Sjekker om feilen skyldes at e-posten allerede eksisterer (Supabase feilkode 23505 betyr duplikat)
+                 if (error.code === '23505' || (error.message && error.message.includes('unique'))) {
+                     alert('This email is already signed up! 🎉');
+                 } else {
+                     // Hvis det er en annen feil fra Supabase, viser vi den nøyaktige meldingen
+                     alert('Supabase Error: ' + error.message + ' (Code: ' + error.code + ')');
+                 }
+                 throw error;
+             }
 
              // Suksess!
-             button.textContent = 'Suksess! 🎉';
+             button.textContent = 'Success! 🎉';
              emailInput.value = ''; // Tømmer feltet
                 
         } catch (error) {
-            console.error('Feil ved registrering:', error.message);
-            alert('Something went wrong. Please try again');
+            console.error('Feil ved registrering:', error);
             button.textContent = originalButtonText;
             button.disabled = false;
         }
@@ -151,6 +159,5 @@
     if (topForm) topForm.addEventListener('submit', handleWaitlistSubmit);
     if (bottomForm) bottomForm.addEventListener('submit', handleWaitlistSubmit);
     </script>
-    
 </body>
 </html>
