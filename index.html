@@ -34,7 +34,7 @@
         
         <!-- Koble din eksisterende Supabase-funksjon til denne formen -->
         <form class="waitlist-form" id="supabase-form-top">
-            <input type="email" placeholder="Din e-postadresse" required>
+            <input type="email" placeholder="Your email" required>
             <button type="submit">JOIN WAITLIST</button>
         </form>
     </section>
@@ -121,91 +121,56 @@
         </div>
     </footer>
 
-  <script>
-const SUPABASE_URL = 'https://dvpmjzsbrsdmzuqtsiaz.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable__9V23BEEUXtd_dJpZ2OZ0A_g1IraVEp';
+    <!-- Sørg for at Supabase-biblioteket er lastet inn først (hvis du bruker CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+    <script>
+    // 1. Initialiser Supabase
+    const SUPABASE_URL = 'https://dvpmjzsbrsdmzuqtsiaz.supabase.co';
+    const SUPABASE_ANON_KEY = 'sb_publishable__9V23BEEUXtd_dJpZ2OZ0A_g1IraVEp';
+    const supabase = supabaseServer.createClient(supabaseUrl, supabaseKey);
 
-async function handleSignup() {
-  const email = document.getElementById('emailInput').value;
-  const form = document.getElementById('signupForm');
-  const success = document.getElementById('successMsg');
-  const note = document.querySelector('.signup-note');
-  const errorMsg = document.getElementById('errorMsg');
-  const submitBtn = document.getElementById('submitBtn');
+    // 2. Funksjon for å håndtere registrering av e-post
+    async function handleWaitlistSubmit(event) {
+        event.preventDefault(); // Hindrer siden i å laste på nytt
 
-  // Clear previous errors
-  errorMsg.style.display = 'none';
-  errorMsg.textContent = '';
+    // Henter e-posten fra inputfeltet i det skjemaet som ble sendt inn
+    const emailInput = event.target.querySelector('input[type="email"]');
+    const email = emailInput.value;
+    const button = event.target.querySelector('button');
 
-  // Validate email
-  if (!email || !email.includes('@')) {
-    document.getElementById('emailInput').style.borderColor = '#c0392b';
-    errorMsg.textContent = 'Please enter a valid email address.';
-    errorMsg.style.display = 'block';
-    return;
-  }
+    // Endre tekst på knappen mens vi lagrer
+    const originalButtonText = button.textContent;
+    button.textContent = 'Saving...';
+    button.disabled = true;
 
-  // Disable button and show loading state
-  submitBtn.disabled = true;
-  submitBtn.textContent = 'Saving...';
+    try {
+        // Sett inn e-posten i Supabase-tabellen din (bytt ut 'waitlist' hvis tabellen din heter noe annet)
+        const { data, error } = await supabase
+             .from('signups') 
+             .insert([{ email: email }]);
 
-  try {
-    // Insert email into Supabase using REST API with proper headers
-    const response = await fetch(`${SUPABASE_URL}/rest/v1/signups`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey': SUPABASE_ANON_KEY,
-        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
-        'Prefer': 'return=minimal'
-      },
-      body: JSON.stringify({ email })
-    });
+         if (error) throw error;
 
-    if (!response.ok) {
-      let errorMsg_text = 'Something went wrong. Please try again.';
-      try {
-        const error = await response.json();
-        if (error.code === '23505' || error.message?.includes('duplicate')) {
-          errorMsg_text = 'This email is already on our waitlist!';
-        } else if (error.message) {
-          errorMsg_text = error.message;
+         // Suksess!
+        button.textContent = 'Suksess! 🎉';
+        emailInput.value = ''; // Tømmer feltet
+            
+        } catch (error) {
+            console.error('Feil ved registrering:', error.message);
+            alert('Something went wrong. Please try again');
+            button.textContent = originalButtonText;
+            button.disabled = false;
         }
-      } catch (e) {}
-      
-      errorMsg.textContent = errorMsg_text;
-      errorMsg.style.display = 'block';
-      submitBtn.disabled = false;
-      submitBtn.textContent = 'Notify me';
-      console.error('Supabase error:', response.status);
-      return;
     }
 
-    // Success!
-    form.style.display = 'none';
-    note.style.display = 'none';
-    success.style.display = 'block';
-  } catch (err) {
-    console.error('Error:', err);
-    errorMsg.textContent = 'Network error. Please check your connection and try again.';
-    errorMsg.style.display = 'block';
-    submitBtn.disabled = false;
-    submitBtn.textContent = 'Notify me';
-  }
-}
+    // 3. Koble funksjonen til BEGGE skjemaene på siden (toppen og bunnen)
+    const topForm = document.getElementById('supabase-form-top');
+    const bottomForm = document.getElementById('supabase-form-bottom');
 
-document.getElementById('emailInput').addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') handleSignup();
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.1 });
-
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    if (topForm) topForm.addEventListener('submit', handleWaitlistSubmit);
+    if (bottomForm) bottomForm.addEventListener('submit', handleWaitlistSubmit);
 </script>
-
+  
 </body>
 </html>
