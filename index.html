@@ -1,848 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="no">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PebbleBook — Remember Every Little Thing</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PebbleBook - A childhood remembered pebble by pebble</title>
+    
+    <!-- Google Fonts for en Substack/organisk følelse -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-  :root {
-    --deep-forest: #1C2F21;
-    --skogs: #2D4A35;
-    --salvie: #6B9178;
-    --lys-salvie: #A8C4AF;
-    --salvie-pale: #D6E8DC;
-    --krem: #FAF7F2;
-    --sand: #F2EDE3;
-    --varm-sand: #E4D9C8;
-    --skifer: #6B6359;
-    --varm-skifer: #3C3630;
-    --text-primary: #3C3630;
-    --text-secondary: #6B6359;
-  }
-
-  html { scroll-behavior: smooth; }
-
-  body {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    background: var(--krem);
-    color: var(--text-primary);
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
-
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    padding: 1.25rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: rgba(250, 247, 242, 0.92);
-    backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(107, 145, 120, 0.15);
-  }
-
-  .nav-logo {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 200;
-    font-size: 1.2rem;
-    letter-spacing: 0.02em;
-    color: var(--deep-forest);
-    text-decoration: none;
-    display: flex;
-    align-items: baseline;
-    gap: 0;
-  }
-  .nav-logo .book-part {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--salvie);
-    font-size: 1.3rem;
-  }
-
-  nav a.cta-small {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--deep-forest);
-    text-decoration: none;
-    border-bottom: 1px solid var(--salvie);
-    padding-bottom: 2px;
-    transition: color 0.2s;
-  }
-  nav a.cta-small:hover { color: var(--salvie); }
-
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-    padding: 8rem 2.5rem 4rem;
-    gap: 4rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-
-  .hero-text { max-width: 520px; }
-
-  .eyebrow {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--salvie);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  .eyebrow::before {
-    content: '';
-    display: block;
-    width: 32px;
-    height: 1px;
-    background: var(--salvie);
-  }
-
-  h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: clamp(3rem, 5vw, 4.5rem);
-    line-height: 1.1;
-    color: var(--deep-forest);
-    margin-bottom: 1.75rem;
-    letter-spacing: -0.01em;
-  }
-  h1 em {
-    font-style: italic;
-    color: var(--salvie);
-  }
-
-  .hero-body {
-    font-size: 1rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-    margin-bottom: 2.5rem;
-    max-width: 420px;
-  }
-
-  .hero-cta {
-    display: inline-block;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 0.78rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--krem);
-    background: var(--deep-forest);
-    padding: 0.9rem 2.2rem;
-    text-decoration: none;
-    transition: background 0.25s;
-  }
-  .hero-cta:hover { background: var(--skogs); }
-
-  /* HERO VISUAL */
-  .hero-visual {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-  }
-
-  .phone-mockup {
-    width: 240px;
-    background: var(--deep-forest);
-    border-radius: 36px;
-    padding: 12px;
-    position: relative;
-    box-shadow: 0 40px 80px rgba(28, 47, 33, 0.25);
-  }
-  .phone-screen {
-    background: var(--krem);
-    border-radius: 26px;
-    overflow: hidden;
-    aspect-ratio: 9/19;
-    display: flex;
-    flex-direction: column;
-  }
-  .phone-top-bar {
-    background: var(--salvie-pale);
-    padding: 1.2rem 1rem 0.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-  .phone-greeting {
-    font-size: 0.6rem;
-    color: var(--salvie);
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-  }
-  .phone-question {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 0.9rem;
-    color: var(--deep-forest);
-    line-height: 1.4;
-  }
-  .phone-content {
-    flex: 1;
-    padding: 0.8rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .memory-card {
-    background: white;
-    border-radius: 10px;
-    padding: 0.6rem 0.7rem;
-    border-left: 2px solid var(--salvie);
-  }
-  .memory-date {
-    font-size: 0.5rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--salvie);
-    margin-bottom: 0.2rem;
-  }
-  .memory-text {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.7rem;
-    color: var(--varm-skifer);
-    line-height: 1.4;
-    font-style: italic;
-  }
-  .memory-card.light {
-    background: var(--salvie-pale);
-    border-left-color: transparent;
-  }
-
-  .floating-pebble {
-    position: absolute;
-    width: 80px;
-    height: 60px;
-    background: var(--salvie-pale);
-    border-radius: 50%;
-    opacity: 0.7;
-  }
-  .fp1 { top: 10%; right: -10%; }
-  .fp2 { bottom: 15%; left: -8%; width: 50px; height: 38px; background: var(--varm-sand); }
-
-  /* TAGLINE STRIP */
-  .tagline-strip {
-    background: var(--deep-forest);
-    padding: 4rem 2.5rem;
-    text-align: center;
-  }
-  .tagline-strip p {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-style: italic;
-    font-size: clamp(1.4rem, 3vw, 2.2rem);
-    color: var(--lys-salvie);
-    line-height: 1.6;
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  .tagline-strip .small-line {
-    font-family: 'DM Sans', sans-serif;
-    font-style: normal;
-    font-weight: 200;
-    font-size: 0.75rem;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--salvie);
-    margin-top: 1.2rem;
-    display: block;
-  }
-
-  /* FEATURES */
-  .features {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 7rem 2.5rem;
-  }
-
-  .section-header {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    margin-bottom: 5rem;
-    align-items: end;
-  }
-  .section-label {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--salvie);
-    align-self: start;
-    padding-top: 0.4rem;
-  }
-  h2 {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    color: var(--deep-forest);
-    line-height: 1.15;
-    letter-spacing: -0.01em;
-  }
-  h2 em { font-style: italic; color: var(--salvie); }
-
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1px;
-    background: var(--varm-sand);
-    border: 1px solid var(--varm-sand);
-  }
-
-  .feature-item {
-    background: var(--krem);
-    padding: 3rem 2.5rem;
-    position: relative;
-    overflow: hidden;
-    transition: background 0.3s;
-  }
-  .feature-item:hover { background: var(--sand); }
-
-  .feature-number {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 4rem;
-    font-weight: 300;
-    color: var(--salvie-pale);
-    line-height: 1;
-    margin-bottom: 1rem;
-    display: block;
-  }
-
-  .feature-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 400;
-    font-size: 1.4rem;
-    color: var(--deep-forest);
-    margin-bottom: 0.75rem;
-  }
-  .feature-body {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.75;
-  }
-
-  /* SIBLING CALLOUT */
-  .sibling-callout {
-    background: var(--deep-forest);
-    padding: 6rem 2.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-    max-width: 100%;
-  }
-  .sibling-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: contents; }
-
-  .callout-label {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--salvie);
-    margin-bottom: 1.5rem;
-  }
-  .callout-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
-    color: var(--krem);
-    line-height: 1.2;
-    margin-bottom: 1.5rem;
-  }
-  .callout-title em { font-style: italic; color: var(--lys-salvie); }
-  .callout-body {
-    font-size: 0.9rem;
-    color: var(--lys-salvie);
-    line-height: 1.8;
-    opacity: 0.85;
-  }
-
-  .sibling-visual {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .child-row {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .child-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1rem;
-    color: var(--lys-salvie);
-    width: 60px;
-    flex-shrink: 0;
-  }
-  .child-bar-wrap {
-    flex: 1;
-    height: 6px;
-    background: rgba(255,255,255,0.08);
-    border-radius: 3px;
-    overflow: hidden;
-  }
-  .child-bar {
-    height: 100%;
-    border-radius: 3px;
-    background: var(--salvie);
-    transition: width 1s ease;
-  }
-  .child-count {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 200;
-    font-size: 0.72rem;
-    color: var(--salvie);
-    letter-spacing: 0.1em;
-    width: 60px;
-    text-align: right;
-  }
-  .sync-label {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 200;
-    font-size: 0.7rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--salvie);
-    text-align: center;
-    padding: 1rem;
-    border: 1px solid rgba(107, 145, 120, 0.25);
-    margin-top: 0.5rem;
-  }
-
-  /* BOOK CALLOUT */
-  .book-section {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 7rem 2.5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-  }
-  .book-visual {
-    aspect-ratio: 4/3;
-    background: var(--sand);
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-  .book-spine {
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 24px;
-    background: var(--skogs);
-  }
-  .book-pages {
-    width: 180px;
-    padding: 1.5rem;
-  }
-  .book-page-line {
-    height: 1px;
-    background: var(--varm-sand);
-    margin-bottom: 0.6rem;
-  }
-  .book-page-img {
-    width: 100%;
-    aspect-ratio: 4/3;
-    background: var(--salvie-pale);
-    margin-bottom: 0.6rem;
-  }
-  .book-text { }
-  .book-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
-    color: var(--deep-forest);
-    line-height: 1.2;
-    margin-bottom: 1.2rem;
-  }
-  .book-title em { font-style: italic; color: var(--salvie); }
-  .book-body {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    line-height: 1.8;
-  }
-
-  /* SIGNUP SECTION */
-  .signup-section {
-    background: var(--sand);
-    padding: 7rem 2.5rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .signup-section::before {
-    content: '';
-    position: absolute;
-    width: 500px;
-    height: 400px;
-    border-radius: 50%;
-    background: var(--salvie-pale);
-    opacity: 0.4;
-    top: -100px;
-    left: -100px;
-  }
-  .signup-section::after {
-    content: '';
-    position: absolute;
-    width: 300px;
-    height: 250px;
-    border-radius: 50%;
-    background: var(--varm-sand);
-    opacity: 0.5;
-    bottom: -60px;
-    right: -60px;
-  }
-  .signup-inner {
-    position: relative;
-    z-index: 1;
-    max-width: 540px;
-    margin: 0 auto;
-  }
-  .signup-eyebrow {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--salvie);
-    margin-bottom: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-  }
-  .signup-eyebrow::before, .signup-eyebrow::after {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--salvie);
-  }
-  .signup-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-weight: 300;
-    font-size: clamp(2.2rem, 4vw, 3rem);
-    color: var(--deep-forest);
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  .signup-title em { font-style: italic; color: var(--salvie); }
-  .signup-subtitle {
-    font-size: 0.92rem;
-    color: var(--text-secondary);
-    line-height: 1.75;
-    margin-bottom: 2.5rem;
-  }
-
-  .signup-form {
-    display: flex;
-    gap: 0;
-    max-width: 420px;
-    margin: 0 auto 1rem;
-  }
-  .signup-form input[type="email"] {
-    flex: 1;
-    padding: 0.9rem 1.2rem;
-    border: 1px solid var(--varm-sand);
-    border-right: none;
-    background: var(--krem);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 0.88rem;
-    color: var(--text-primary);
-    outline: none;
-    appearance: none;
-    -webkit-appearance: none;
-    border-radius: 0;
-  }
-  .signup-form input[type="email"]::placeholder { color: var(--skifer); opacity: 0.6; }
-  .signup-form input[type="email"]:focus { border-color: var(--salvie); }
-
-  .signup-form button {
-    padding: 0.9rem 1.5rem;
-    background: var(--deep-forest);
-    color: var(--krem);
-    border: 1px solid var(--deep-forest);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.25s;
-    white-space: nowrap;
-    border-radius: 0;
-  }
-  .signup-form button:hover { background: var(--skogs); }
-  .signup-form button:disabled {
-    background: var(--salvie);
-    cursor: not-allowed;
-  }
-
-  .signup-note {
-    font-size: 0.72rem;
-    color: var(--skifer);
-    letter-spacing: 0.04em;
-  }
-
-  .success-msg {
-    display: none;
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.2rem;
-    color: var(--salvie);
-    padding: 1rem;
-  }
-
-  .error-msg {
-    display: none;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.85rem;
-    color: #c0392b;
-    padding: 0.75rem;
-    margin-bottom: 1rem;
-  }
-
-  /* FOOTER */
-  footer {
-    background: var(--deep-forest);
-    padding: 3rem 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
-  .footer-logo {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 200;
-    font-size: 1rem;
-    color: var(--lys-salvie);
-    display: flex;
-    align-items: baseline;
-  }
-  .footer-logo .book-part {
-    font-family: 'Cormorant Garamond', serif;
-    font-style: italic;
-    font-size: 1.1rem;
-    color: var(--salvie);
-  }
-  .footer-note {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 200;
-    font-size: 0.72rem;
-    color: var(--salvie);
-    opacity: 0.7;
-    letter-spacing: 0.06em;
-  }
-
-  /* FADE IN */
-  .fade-up {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-  }
-  .fade-up.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* RESPONSIVE */
-  @media (max-width: 800px) {
-    .hero { grid-template-columns: 1fr; padding-top: 7rem; }
-    .hero-visual { display: none; }
-    .section-header { grid-template-columns: 1fr; gap: 1rem; }
-    .features-grid { grid-template-columns: 1fr; }
-    .sibling-callout { grid-template-columns: 1fr; gap: 3rem; }
-    .book-section { grid-template-columns: 1fr; }
-    .signup-form { flex-direction: column; }
-    .signup-form input[type="email"] { border-right: 1px solid var(--varm-sand); border-bottom: none; }
-    nav { padding: 1rem 1.5rem; }
-  }
-</style>
+    <!-- Kobling til den eksterne stilfilen din -->
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">pebble<span class="book-part">book</span></a>
-  <a href="#signup" class="cta-small">Join waitlist</a>
-</nav>
+    <!-- NAVIGASJON -->
+    <header class="container">
+        <nav>
+            <a href="/" class="logo">pebblebook</a>
+            <ul class="nav-links">
+                <li><a href="/om-oss.html">Om oss</a></li>
+                <li><a href="/blogg/">Blogg</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-text fade-up">
-    <p class="eyebrow">Coming soon</p>
-    <h1>A childhood<br>remembered,<br><em>pebble by pebble.</em></h1>
-    <p class="hero-body">PebbleBook helps busy parents preserve the everyday details that make a childhood — the mispronounced words, the obsessions, the small moments — before they're forgot[...]
-    <a href="#signup" class="hero-cta">Join the waitlist</a>
-  </div>
-  <div class="hero-visual fade-up">
-    <div class="floating-pebble fp1"></div>
-    <div class="floating-pebble fp2"></div>
-    <div class="phone-mockup">
-      <div class="phone-screen">
-        <div class="phone-top-bar">
-          <span class="phone-greeting">This week's pebble</span>
-          <p class="phone-question">"What word does she use that only your family understands?"</p>
+    <!-- HERO SEKSJON -->
+    <section class="container hero">
+        <h1>A childhood remembered pebble by pebble.</h1>[cite: 1]
+        <p>PebbleBook is a digital baby and childhood memory app designed for busy parents. Gather memories, pebble by pebble, and you are slowly writing the story of them.</p>[cite: 1]
+        
+        <!-- Koble din eksisterende Supabase-funksjon til denne formen -->
+        <form class="waitlist-form" id="supabase-form-top">
+            <input type="email" placeholder="Din e-postadresse" required>
+            <button type="submit">JOIN WAITLIST</button>[cite: 1]
+        </form>
+    </section>
+
+    <!-- VERDIFORSLAG -->
+    <section class="container">
+        <h2 class="features-intro">Helping you commemorate your children's childhood</h2>[cite: 1]
+        <div class="features-grid">
+            <div class="feature-card">
+                <span class="number">#1</span>[cite: 1]
+                <p>We give you nudges so you remember to write down the things we think we will always remember. Just in case we don't.</p>[cite: 1]
+            </div>
+            <div class="feature-card">
+                <span class="number">#2</span>[cite: 1]
+                <p>The app works beautifully with one child, but we are also built especially for multiple children. You can even enter memories for them all at the same time that is saved individually.</p>[cite: 1]
+            </div>
+            <div class="feature-card">
+                <span class="number">#3</span>[cite: 1]
+                <p>Everything accumulates into a living timeline - a record of who they actually were, in their own era, told in your words. Pebble by pebble, a book takes shape.</p>[cite: 1]
+            </div>
         </div>
-        <div class="phone-content">
-          <div class="memory-card">
-            <p class="memory-date">June 2025 · Ella, age 3</p>
-            <p class="memory-text">"Moons" — she calls all round fruits moons. Oranges, apples, plums. Everything round is a moon.</p>
-          </div>
-          <div class="memory-card light">
-            <p class="memory-date">March 2025 · Ella, age 3</p>
-            <p class="memory-text">"Nigh-nigh water" — the specific cup of water she needs on her nightstand or sleep is impossible.</p>
-          </div>
-          <div class="memory-card">
-            <p class="memory-date">Jan 2025 · Ella, age 2</p>
-            <p class="memory-text">"Boo-boos" — bandaids, yes, but also clouds. She points at grey clouds and says "sky boo-boo."</p>
-          </div>
+    </section>
+
+    <!-- VISUELL PAUSE (BILDER) -->
+    <section class="container visual-break">
+        <div class="image-gallery">
+            <!-- Erstatt 'src' med dine faktiske filstier på GitHub -->
+            <img src="assets/forest1.jpg" alt="Skogsti">[cite: 1]
+            <img src="assets/ocean.jpg" alt="Hav og fjell">[cite: 1]
+            <img src="assets/forest2.jpg" alt="Skog med sollys">[cite: 1]
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <p class="quote">"It's impossible to cherish every stone, gravel and rock that make up a childhood. <br>But we can try to save some of the pebbles."</p>[cite: 1]
+    </section>
 
-<!-- TAGLINE STRIP -->
-<div class="tagline-strip">
-  <p>It's impossible to cherish every stone, gravel and rock that make up a childhood.<br>But we can try to save some of the pebbles.</p>
-  <span class="small-line">Pebble by pebble</span>
-</div>
+    <!-- HOW IT WORKS & MEMORY LANE -->
+    <section class="container how-it-works-section">
+        <div class="how-it-works-grid">
+            
+            <!-- Venstre side: Grafikken av tidslinjen -->
+            <div class="memory-lane-mockup">
+                <!-- Erstatt med bildet av "Memory Lane"-skissen din fra PebbleBook website design (2).pdf -->
+                <img src="assets/memory-lane.png" alt="Memory Lane tidslinje skisse">[cite: 1]
+            </div>
 
-<!-- FEATURES -->
-<section class="features">
-  <div class="section-header fade-up">
-    <span class="section-label">How it works</span>
-    <h2>Designed to fit into<br><em>real life.</em></h2>
-  </div>
-  <div class="features-grid">
-    <div class="feature-item fade-up">
-      <span class="feature-number">01</span>
-      <h3 class="feature-title">One question a week</h3>
-      <p class="feature-body">Age-optimised prompts remove the blank page entirely. You don't think about what to write — you simply answer. Two minutes, once a week, and the details are saved [...]
-    </div>
-    <div class="feature-item fade-up">
-      <span class="feature-number">02</span>
-      <h3 class="feature-title">Your commitment, your pace</h3>
-      <p class="feature-body">Three notification tiers adapt to your capacity. Casual, Standard, or Memory Maker — the app works around your life, not the other way around.</p>
-    </div>
-    <div class="feature-item fade-up">
-      <span class="feature-number">03</span>
-      <h3 class="feature-title">The book, already designed</h3>
-      <p class="feature-body">A minimalist grid system quietly arranges everything as you go. When you're ready, one tap exports a print-ready coffee-table book — no formatting, no decisions.</[...]
-    </div>
-    <div class="feature-item fade-up">
-      <span class="feature-number">04</span>
-      <h3 class="feature-title">Every child, equally remembered</h3>
-      <p class="feature-body">The Sibling Module ensures shared memories are saved to every child's timeline automatically. Your third child gets the same record as your first.</p>
-    </div>
-  </div>
-</section>
+            <!-- Høyre side: Stegene -->
+            <div>
+                <h2 style="font-family: var(--font-serif); font-size: 32px; margin-bottom: 24px;">How it works</h2>[cite: 1]
+                <ul class="steps">
+                    <li class="step-item">
+                        <h3>#1 Sign up and register your child / children.</h3>[cite: 1]
+                    </li>
+                    <li class="step-item">
+                        <h3>#2 Choose which child you want to collect pebbles for.</h3>[cite: 1]
+                        <p style="font-size: 15px; color: var(--text-muted);">We provide age-customized questions that prompts your memory. If the question doesn't immediately spark a thought, swipe left and we'll give you a new question.</p>[cite: 1]
+                        <span class="step-example">"Describe what happened the last time your child tried to play with another kid at the park"</span>[cite: 1]
+                        <span class="step-example">"Has NAME said something funny lately?"</span>[cite: 1]
+                    </li>
+                    <li class="step-item">
+                        <h3>#3 Gentle nudges, zero shame.</h3>
+                        <p style="font-size: 15px; color: var(--text-muted);">We will give you a gentle nudge so you remember to make notes, but you choose the commitment level that works for you and your life. We're not here to shame, we're here to help.</p>[cite: 1]
+                    </li>
+                    <li class="step-item">
+                        <h3>#4 Everything you write will be perpetuated in a timeline.</h3>[cite: 1]
+                        <p style="font-size: 15px; color: var(--text-muted);">Showing you your childs story. Written pebble by pebble.</p>[cite: 1]
+                    </li>
+                </ul>
+            </div>
 
-<!-- SIBLING CALLOUT -->
-<div class="sibling-callout">
-  <div class="fade-up" style="max-width:1100px; margin:0 auto; padding: 0 2.5rem;">
-    <p class="callout-label">The sibling problem</p>
-    <h2 class="callout-title">The third child deserves<br><em>the same story.</em></h2>
-    <p class="callout-body">Documentation drops significantly with each additional child. Not because parents love them less — but because life gets fuller. PebbleBook is built specifically for[...]
-  </div>
-  <div class="fade-up" style="max-width:1100px; margin:0 auto; padding: 0 2.5rem;">
-    <div class="sibling-visual">
-      <div class="child-row">
-        <span class="child-name">Ella</span>
-        <div class="child-bar-wrap"><div class="child-bar" style="width: 88%"></div></div>
-        <span class="child-count">247 pebbles</span>
-      </div>
-      <div class="child-row">
-        <span class="child-name">Jonas</span>
-        <div class="child-bar-wrap"><div class="child-bar" style="width: 82%"></div></div>
-        <span class="child-count">231 pebbles</span>
-      </div>
-      <div class="child-row">
-        <span class="child-name">Mia</span>
-        <div class="child-bar-wrap"><div class="child-bar" style="width: 79%"></div></div>
-        <span class="child-count">219 pebbles</span>
-      </div>
-      <div class="sync-label">Shared memories synced to all timelines automatically</div>
-    </div>
-  </div>
-</div>
+        </div>
+    </section>
 
-<!-- BOOK SECTION -->
-<section class="book-section">
-  <div class="book-visual fade-up">
-    <div class="book-spine"></div>
-    <div class="book-pages">
-      <div class="book-page-img"></div>
-      <div class="book-page-line"></div>
-      <div class="book-page-line" style="width:70%"></div>
-      <div class="book-page-line"></div>
-      <div class="book-page-line" style="width:85%"></div>
-    </div>
-  </div>
-  <div class="book-text fade-up">
-    <p class="callout-label" style="color:var(--salvie); font-family:'DM Sans',sans-serif; font-weight:300; font-size:0.72rem; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:1.2re[...]
-    <h2 class="book-title">From app to table,<br><em>without the labour.</em></h2>
-    <p class="book-body">Everything you've saved builds quietly into a beautifully designed book. Select a date range, see the cost instantly, and order — a printed keepsake your child will one[...]
-  </div>
-</section>
+    <!-- BUNNSEKSJON / END CTA -->
+    <footer>
+        <div class="container footer-cta">
+            <h2>Be the first to start remembering.</h2>[cite: 1]
+            <p>PebbleBook is in development. Leave your email and we'll let you know when it's ready - no spam, just one message when the time comes.</p>[cite: 1]
+            
+            <!-- Form #2 i bunnen av siden -->
+            <form class="waitlist-form" id="supabase-form-bottom">
+                <input type="email" placeholder="your@email.com" required>[cite: 1]
+                <button type="submit">NOTIFY ME</button>[cite: 1]
+            </form>
+            <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>[cite: 1]
+        </div>
+    </footer>
 
-<!-- SIGNUP -->
-<section class="signup-section" id="signup">
-  <div class="signup-inner">
-    <p class="signup-eyebrow">Join the waitlist</p>
-    <h2 class="signup-title">Be the first to<br><em>start remembering.</em></h2>
-    <p class="signup-subtitle">PebbleBook is in development. Leave your email and we'll let you know when it's ready — no spam, just one message when the time comes.</p>
-
-    <div id="errorMsg" class="error-msg"></div>
-    <div class="signup-form" id="signupForm">
-      <input type="email" id="emailInput" placeholder="your@email.com" required>
-      <button type="button" id="submitBtn" onclick="handleSignup()">Notify me</button>
-    </div>
-    <p class="signup-note">We respect your privacy. Unsubscribe anytime.</p>
-    <p class="success-msg" id="successMsg">You're on the list. We'll be in touch.</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">pebble<span class="book-part">book</span></div>
-  <p class="footer-note">© 2025 PebbleBook. App coming soon.</p>
-</footer>
-
-<script>
+  <script>
 const SUPABASE_URL = 'https://dvpmjzsbrsdmzuqtsiaz.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable__9V23BEEUXtd_dJpZ2OZ0A_g1IraVEp';
 
