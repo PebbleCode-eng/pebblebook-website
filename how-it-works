@@ -14,7 +14,7 @@
   <!-- NAV -->
   <nav>
     <a href="index.html" class="nav-logo">
-      <img src="assets/PebbleLogo.jpg" alt="PebbleBook" />
+      <img src="assets/pebblebook logo.png" alt="PebbleBook" />
     </a>
     <ul class="nav-links">
       <li><a href="how-it-works.html" class="active">How it works</a></li>
@@ -87,7 +87,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <img src="assets/PebbleLogo.jpg" alt="PebbleBook" /> />
+    <img src="assets/pebblebook logo.png" alt="PebbleBook" /> />
     <p>© 2026 PebbleBook. All rights reserved.</p>
   </footer>
 
