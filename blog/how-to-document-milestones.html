@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to Document Your Child's Milestones Without Losing Track — Pebblebook</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ─── TOKENS ─────────────────────────────────────────────── */
+    :root {
+      --teal:        #07455d;
+      --teal-light:  #0d5c7a;
+      --gold:        #f1be6c;
+      --gold-dark:   #c99940;
+      --cream:       #fdf5ec;
+      --cream-alt:   #f5ede0;
+      --blue:        #5b77bc;
+      --green:       #4c6a33;
+      --slate:       #334155;
+      --text:        #1a2e38;
+      --text-muted:  #5a7080;
+      --white:       #ffffff;
+
+      --font-display: 'Cormorant Garamond', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
+
+      --max-w: 1100px;
+      --section-pad: 96px 24px;
+    }
+
+    /* ─── RESET ──────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      font-weight: 300;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.65;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ─── NAV ────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 40px;
+      background: rgba(253, 245, 236, 0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(7, 69, 93, 0.08);
+    }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--teal);
+      letter-spacing: 0.02em;
+    }
+    .nav-logo span { color: var(--gold-dark); }
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 32px;
+      align-items: center;
+    }
+    .nav-links a {
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 400;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-links a.active { color: var(--teal); border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+    .nav-cta {
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--teal);
+      border-bottom: 1px solid var(--gold);
+      padding-bottom: 2px;
+      transition: color 0.2s, border-color 0.2s;
+    }
+    .nav-cta:hover { color: var(--gold-dark); border-color: var(--gold-dark); }
+
+    /* ─── BLOG HERO ──────────────────────────────────────────── */
+    .subpage-hero {
+      padding: 160px 40px 80px;
+      max-width: var(--max-w);
+      margin: 0 auto;
+      border-bottom: 1px solid rgba(7,69,93,0.08);
+    }
+    .section-eyebrow {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 16px;
+    }
+    .subpage-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 400;
+      color: var(--teal);
+      line-height: 1.1;
+      max-width: 780px;
+      margin-bottom: 20px;
+    }
+    .subpage-hero h1 em {
+      font-style: italic;
+      color: var(--gold-dark);
+    }
+    .subpage-hero .meta {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: 28px;
+    }
+    .subpage-hero .meta-date {
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .subpage-hero .meta-tag {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      background: rgba(7,69,93,0.07);
+      padding: 4px 12px;
+      border-radius: 20px;
+    }
+
+    /* ─── ARTICLE BODY ───────────────────────────────────────── */
+    .article-wrap {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 72px 40px 96px;
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 80px;
+      align-items: start;
+    }
+
+    /* Main prose */
+    .article-body p {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.85;
+      margin-bottom: 24px;
+    }
+    .article-body p em {
+      font-style: italic;
+      color: var(--text-muted);
+    }
+    .article-body h2 {
+      font-family: var(--font-display);
+      font-size: clamp(26px, 3vw, 38px);
+      font-weight: 400;
+      color: var(--teal);
+      line-height: 1.2;
+      margin: 56px 0 20px;
+      padding-top: 8px;
+    }
+    .article-body h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 600;
+      color: var(--teal);
+      margin: 32px 0 14px;
+      letter-spacing: 0.01em;
+    }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid rgba(7,69,93,0.1);
+      margin: 48px 0;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(20px, 2.5vw, 26px);
+      font-weight: 400;
+      color: var(--teal);
+      line-height: 1.5;
+      padding: 28px 32px;
+      border-left: 3px solid var(--gold);
+      background: var(--white);
+      border-radius: 0 12px 12px 0;
+      margin: 40px 0;
+    }
+
+    /* Milestone table cards */
+    .milestone-group {
+      background: var(--white);
+      border: 1px solid rgba(7,69,93,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+    .milestone-group-header {
+      background: var(--teal);
+      padding: 14px 24px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .milestone-row {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 14px 24px;
+      border-bottom: 1px solid rgba(7,69,93,0.06);
+    }
+    .milestone-row:last-child { border-bottom: none; }
+    .milestone-age {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: var(--gold-dark);
+      white-space: nowrap;
+      min-width: 120px;
+    }
+    .milestone-label {
+      font-size: 14px;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.5;
+    }
+    .milestone-label strong { font-weight: 500; color: var(--text); }
+    .milestone-note {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Prompt-style list */
+    .prompt-list {
+      list-style: none;
+      margin: 8px 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .prompt-list li {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 16px;
+      color: var(--teal);
+      padding: 14px 20px;
+      border-left: 2px solid var(--gold);
+      background: var(--white);
+      border-radius: 0 8px 8px 0;
+    }
+
+    /* Bold list */
+    .bold-list {
+      list-style: none;
+      margin: 8px 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .bold-list li {
+      font-size: 15px;
+      font-weight: 300;
+      color: var(--text);
+      line-height: 1.6;
+      padding-left: 20px;
+      position: relative;
+    }
+    .bold-list li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--gold-dark);
+      font-weight: 400;
+    }
+    .bold-list li strong {
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    /* Format comparison */
+    .format-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+      margin: 24px 0;
+    }
+    .format-card {
+      background: var(--white);
+      border: 1px solid rgba(7,69,93,0.08);
+      border-radius: 12px;
+      padding: 24px 20px;
+    }
+    .format-card-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 10px;
+    }
+    .format-card p {
+      font-size: 13px !important;
+      margin-bottom: 0 !important;
+      color: var(--text-muted) !important;
+    }
+
+    /* CTA block */
+    .article-cta {
+      background: var(--teal);
+      border-radius: 16px;
+      padding: 40px 36px;
+      margin-top: 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .article-cta::after {
+      content: '';
+      position: absolute;
+      width: 200px; height: 200px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 50%;
+      bottom: -80px; right: -60px;
+    }
+    .article-cta p {
+      font-family: var(--font-display) !important;
+      font-style: italic;
+      font-size: 22px !important;
+      font-weight: 400 !important;
+      color: var(--white) !important;
+      line-height: 1.5 !important;
+      margin-bottom: 20px !important;
+    }
+    .btn-primary {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--teal);
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 14px 28px;
+      border-radius: 40px;
+      transition: background 0.2s, transform 0.15s;
+      cursor: pointer;
+      border: none;
+      position: relative;
+      z-index: 1;
+    }
+    .btn-primary:hover { background: var(--gold-dark); transform: translateY(-1px); }
+
+    /* ─── SIDEBAR ────────────────────────────────────────────── */
+    .article-sidebar {
+      position: sticky;
+      top: 100px;
+    }
+    .sidebar-toc {
+      background: var(--white);
+      border: 1px solid rgba(7,69,93,0.08);
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin-bottom: 24px;
+    }
+    .sidebar-toc-label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      margin-bottom: 16px;
+    }
+    .sidebar-toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sidebar-toc ol li {
+      counter-increment: toc;
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+    }
+    .sidebar-toc ol li::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 10px;
+      font-weight: 500;
+      color: var(--gold-dark);
+      flex-shrink: 0;
+    }
+    .sidebar-toc ol li a {
+      font-size: 13px;
+      font-weight: 300;
+      color: var(--text-muted);
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+    .sidebar-toc ol li a:hover { color: var(--teal); }
+
+    .sidebar-app {
+      background: var(--teal);
+      border-radius: 12px;
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .sidebar-app-eyebrow {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .sidebar-app h4 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+    .sidebar-app p {
+      font-size: 13px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.65);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    /* ─── MANIFESTO STRIP ────────────────────────────────────── */
+    .manifesto {
+      background: var(--teal);
+      padding: 80px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .manifesto::before, .manifesto::after {
+      content: '';
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.04);
+    }
+    .manifesto::before { width: 400px; height: 400px; top: -150px; left: -100px; }
+    .manifesto::after  { width: 300px; height: 300px; bottom: -120px; right: -80px; }
+    .manifesto-quote {
+      font-family: var(--font-display);
+      font-size: clamp(22px, 3.5vw, 36px);
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.5;
+      max-width: 820px;
+      margin: 0 auto 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .manifesto-tagline {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ─── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: var(--teal);
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.7);
+    }
+    footer p {
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+    }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      nav { padding: 16px 20px; }
+      .nav-links { display: none; }
+      .subpage-hero { padding: 120px 24px 60px; }
+      .article-wrap {
+        grid-template-columns: 1fr;
+        padding: 48px 24px 60px;
+        gap: 0;
+      }
+      .article-sidebar { display: none; }
+      .format-cards { grid-template-columns: 1fr; }
+      footer { flex-direction: column; gap: 16px; text-align: center; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { transition: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="../index.html" class="nav-logo">Pebble<span>book</span></a>
+    <ul class="nav-links">
+      <li><a href="../how-it-works.html">How it works</a></li>
+      <li><a href="index.html" class="active">Blog</a></li>
+    </ul>
+    <a href="../index.html#signup" class="nav-cta">Get early access</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="subpage-hero">
+    <p class="section-eyebrow">Memory journaling</p>
+    <h1>How to Document Your Child's Milestones <em>Without Losing Track</em></h1>
+    <div class="meta">
+      <span class="meta-date">June 2026</span>
+      <span class="meta-tag">Beginner's guide</span>
+      <span class="meta-tag">Milestones</span>
+    </div>
+  </header>
+
+  <!-- ARTICLE -->
+  <div class="article-wrap">
+    <article class="article-body">
+
+      <p>When my first daughter was born, I did what most new parents do: I rang my mum to ask what I was like as a baby. Was I a good sleeper? What was I like? And she said — with complete sincerity — <em>"I think you probably slept well."</em></p>
+
+      <p>I thought: surely you remember. Surely you remember <em>everything</em>.</p>
+
+      <p>I completely understand her now. But in that moment, I made myself a promise: I would have the answers. If my daughter ever called me one day — or if she had children of her own — I wanted to be able to tell her exactly who she was. Not just the big milestones. All of it.</p>
+
+      <p>This is what I learned from doing it, failing at it, starting over, and eventually building an app because I couldn't find a solution that actually worked for real life with multiple kids.</p>
+
+      <hr />
+
+      <h2 id="why">Why Most Parents Lose Track (And Why That's Completely Normal)</h2>
+
+      <p>The first barrier isn't motivation. Most parents <em>want</em> to document their child's life. The barrier is the blank page — and the sheer volume of things happening all at once.</p>
+
+      <p>You sit down to write and suddenly realise there is just <em>so much</em> to say. Everything feels important. Where do you even begin? So you close the notes app and tell yourself you'll start properly tomorrow.</p>
+
+      <p>The second barrier is guilt. You missed the first three months. Or the first year. Or your second child got a fraction of what your first did, and your third got almost nothing — because that's just the maths of having more children and less time.</p>
+
+      <p>Both of these barriers are real. Neither of them should stop you.</p>
+
+      <hr />
+
+      <h2 id="milestones">Baby Milestones: What to Track and When</h2>
+
+      <p>If you're a first-time parent, you're probably googling developmental milestones and wondering what's normal. Here's a practical reference — and more importantly, a reminder to <em>write it down when it happens</em>, because you will not remember the exact date six months from now.</p>
+
+      <div class="milestone-group">
+        <div class="milestone-group-header">Physical milestones</div>
+        <div class="milestone-row"><span class="milestone-age">6–8 weeks</span><span class="milestone-label"><strong>Smiles socially</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">3–4 months</span><span class="milestone-label"><strong>Holds head up</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">~4 months</span><span class="milestone-label"><strong>Rolls over</strong> <span class="milestone-note">tummy to back</span></span></div>
+        <div class="milestone-row"><span class="milestone-age">5–6 months</span><span class="milestone-label"><strong>Rolls over</strong> <span class="milestone-note">back to tummy</span></span></div>
+        <div class="milestone-row"><span class="milestone-age">6–8 months</span><span class="milestone-label"><strong>Sits without support</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">7–10 months</span><span class="milestone-label"><strong>Starts crawling</strong> <span class="milestone-note">some babies skip this entirely — also worth noting!</span></span></div>
+        <div class="milestone-row"><span class="milestone-age">9–12 months</span><span class="milestone-label"><strong>Pulls to stand</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">9–15 months</span><span class="milestone-label"><strong>First steps</strong> <span class="milestone-note">anywhere in this range is completely normal</span></span></div>
+        <div class="milestone-row"><span class="milestone-age">14–15 months</span><span class="milestone-label"><strong>Walks independently</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">~18 months</span><span class="milestone-label"><strong>Runs</strong> <span class="milestone-note">gloriously, recklessly</span></span></div>
+        <div class="milestone-row"><span class="milestone-age">18–24 months</span><span class="milestone-label"><strong>Climbs stairs</strong> <span class="milestone-note">with help</span></span></div>
+      </div>
+
+      <div class="milestone-group">
+        <div class="milestone-group-header">Communication milestones</div>
+        <div class="milestone-row"><span class="milestone-age">~2 months</span><span class="milestone-label"><strong>Coos and makes sounds</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">~4 months</span><span class="milestone-label"><strong>Laughs</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">~6 months</span><span class="milestone-label"><strong>Babbles</strong> <span class="milestone-note">ba-ba, da-da</span></span></div>
+        <div class="milestone-row"><span class="milestone-age">10–14 months</span><span class="milestone-label"><strong>First word</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">18–24 months</span><span class="milestone-label"><strong>2-word combinations</strong> <span class="milestone-note">"more milk", "daddy go"</span></span></div>
+        <div class="milestone-row"><span class="milestone-age">2–3 years</span><span class="milestone-label"><strong>Short sentences</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">3–4 years</span><span class="milestone-label"><strong>Tells you about their day</strong> <span class="milestone-note">write these down — they are gold</span></span></div>
+      </div>
+
+      <div class="milestone-group">
+        <div class="milestone-group-header">Feeding milestones</div>
+        <div class="milestone-row"><span class="milestone-age">~6 months</span><span class="milestone-label"><strong>First solid food</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">8–9 months</span><span class="milestone-label"><strong>First finger foods</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">~12 months</span><span class="milestone-label"><strong>Drinking from a cup</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">12–18 months</span><span class="milestone-label"><strong>Eating family meals</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">12–18 months</span><span class="milestone-label"><strong>Using a spoon or fork</strong> <span class="milestone-note">messily, gloriously</span></span></div>
+      </div>
+
+      <div class="milestone-group">
+        <div class="milestone-group-header">Social &amp; emotional milestones</div>
+        <div class="milestone-row"><span class="milestone-age">First weeks</span><span class="milestone-label"><strong>Recognises your face</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">8–18 months</span><span class="milestone-label"><strong>Separation anxiety peaks</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">18–24 months</span><span class="milestone-label"><strong>Parallel play</strong> <span class="milestone-note">playing near, not yet with, other children</span></span></div>
+        <div class="milestone-row"><span class="milestone-age">2–3 years</span><span class="milestone-label"><strong>Imaginative play</strong></span></div>
+        <div class="milestone-row"><span class="milestone-age">3–4 years</span><span class="milestone-label"><strong>Makes friends</strong></span></div>
+      </div>
+
+      <p style="font-size:14px; color: var(--text-muted); font-style: italic;">A note on all of these: ranges are wide, and every child is different. These are prompts for observation, not reasons to worry. If you have genuine developmental concerns, always speak to your paediatrician.</p>
+
+      <hr />
+
+      <h2 id="details">Beyond the Milestones: What You'll Actually Want to Remember</h2>
+
+      <p>Here's what no milestone chart will tell you: the dates matter far less than the <em>details</em>.</p>
+
+      <p>I can tell you my daughter rolled over at four months. What I'm glad I wrote down is that she looked absolutely furious about it — like she hadn't planned to do it and wasn't sure how she felt.</p>
+
+      <div class="pull-quote">"That's the stuff that disappears first."</div>
+
+      <p>Some things worth capturing at every age:</p>
+
+      <ul class="bold-list">
+        <li><strong>Words they mispronounce</strong> — these go fast. You think you'll remember. You won't.</li>
+        <li><strong>What they eat and how they eat it</strong> — tastes change constantly.</li>
+        <li><strong>Their current best friends</strong></li>
+        <li><strong>A funny thing they said this week</strong></li>
+        <li><strong>What they're obsessed with right now</strong></li>
+        <li><strong>How they fall asleep</strong></li>
+        <li><strong>What they're scared of / what makes them brave</strong></li>
+        <li><strong>Their personality</strong> — the goods and the bads</li>
+      </ul>
+
+      <p>All ages come with the goods and the bads. The details are what bring each age back.</p>
+
+      <hr />
+
+      <h2 id="start">What You Actually Need to Start (Hint: Very Little)</h2>
+
+      <p>You do not need a beautiful leather journal. You do not need a special app, a photographer, or a colour-coded system.</p>
+
+      <p>You need ten minutes and something to write with.</p>
+
+      <p>If you have ten minutes tonight, open your notes app, write today's date, and answer one question about your child. Just one:</p>
+
+      <ul class="prompt-list">
+        <li>What's a word they pronounce wrong that makes you smile?</li>
+        <li>What did they eat this week?</li>
+        <li>What's their current favourite thing?</li>
+      </ul>
+
+      <p>One question. One answer. Done.</p>
+
+      <p>Ten minutes a month is genuinely enough. Over a year, that adds up to more than an hour of memories — enough to fill a meaningful memory book.</p>
+
+      <div class="pull-quote">"They don't need pages and pages to know they were loved. They just need a few details that they themselves will one day find funny."</div>
+
+      <hr />
+
+      <h2 id="format">Digital, Physical, or Both?</h2>
+
+      <div class="format-cards">
+        <div class="format-card">
+          <div class="format-card-label">Physical</div>
+          <p>Beautiful and tactile. Children love something they can hold. Grandparents love it as a gift. But requires consistency — and life gets in the way.</p>
+        </div>
+        <div class="format-card">
+          <div class="format-card-label">Digital</div>
+          <p>Always with you, always accessible. But a long-running notes doc gets messy fast and starts to feel like a chore.</p>
+        </div>
+        <div class="format-card" style="border: 1.5px solid var(--gold);">
+          <div class="format-card-label" style="color: var(--teal);">Both ✦</div>
+          <p>Write tiny prompted notes digitally. Export into a printed book once a year. Low pressure to write, beautiful result to keep.</p>
+        </div>
+      </div>
+
+      <p>One photo per memory. Not a thousand. You already have thousands of photos. You need a few that tell the story.</p>
+
+      <p>And as a practical note: a printed memory book makes an <em>exceptional</em> Christmas gift for grandparents.</p>
+
+      <hr />
+
+      <h2 id="guilt">On Gaps, Guilt, and Starting Late</h2>
+
+      <p>My youngest daughter has about two tiny notes from her first year of life. Her siblings have significantly more.</p>
+
+      <p>Here's what I've come to terms with: I gave her siblings. That is a hard, beautiful, exhausting job, and it is the greatest gift I could give her. It trumps any notes I didn't take.</p>
+
+      <p>If you're reading this and your child is already seven — start now. They are doing things at seven that you are absolutely certain you will always remember. You won't. So write them down.</p>
+
+      <p>And if you want to fill in the gaps from before? Do it whenever a memory surfaces. Change the date, go back in time, add it in. But don't let the past become the enemy of the present.</p>
+
+      <div class="pull-quote">"Accept where you're at, and focus on what you can do from now going forward."</div>
+
+      <hr />
+
+      <h2 id="who">Who Is This Really For?</h2>
+
+      <p>I started this for my daughter. So she would know she was wanted, and loved, and that someone was paying close attention to her.</p>
+
+      <p>But when I go back and read what I wrote — I feel it too. I'm transported straight back. I get to know her again, as she was then. And I realise this is just as much for me.</p>
+
+      <p>It's for us. For her dad and me to sit together one day and go through it. She probably won't care as a teenager. But maybe we will. And then maybe, if she has children of her own, she'll pick it up again and care in a completely different way.</p>
+
+      <p>It changes. The audience changes. That's the point.</p>
+
+      <hr />
+
+      <h2 id="advice">The One Thing I Wish Someone Had Told Me</h2>
+
+      <p>Write anything. It doesn't have to be momentous. It doesn't have to be a milestone.</p>
+
+      <ul class="prompt-list">
+        <li>She said this when we came back from childcare today.</li>
+      </ul>
+
+      <p>That's enough. That's more than enough.</p>
+
+      <p>You think it has to be big in order to be worth writing down. It doesn't. Because there are far more small moments than big ones, and it's the small ones that disappear first.</p>
+
+      <p>Write something. Not everything. Just something.</p>
+
+      <div class="pull-quote">"You need less than you think in order to have the feeling of them."</div>
+
+      <hr />
+
+      <h2 id="closing">What I Hope My Daughter Feels When She Reads This</h2>
+
+      <p>I hope she feels interesting.</p>
+
+      <p>I think that's one of the most important things a person can feel — that someone was genuinely curious about them. Not just proud of them, not just loving them from a distance, but actually <em>interested</em> in getting to know them.</p>
+
+      <p>That's what these notes are. Evidence that from the very beginning, I wanted to know who she was.</p>
+
+      <p>She was loved. She was seen. And someone thought the details of her tiny, ordinary, extraordinary life were worth writing down.</p>
+
+      <div class="article-cta">
+        <p>Pebblebook is a children's memory app built around this exact idea — small prompts, easy answers, and a beautiful record that grows alongside your child.</p>
+        <a href="../index.html#signup" class="btn-primary">Get early access</a>
+      </div>
+
+    </article>
+
+    <!-- SIDEBAR -->
+    <aside class="article-sidebar">
+      <div class="sidebar-toc">
+        <div class="sidebar-toc-label">In this post</div>
+        <ol>
+          <li><a href="#why">Why parents lose track</a></li>
+          <li><a href="#milestones">Baby milestones: what &amp; when</a></li>
+          <li><a href="#details">What you'll actually want to remember</a></li>
+          <li><a href="#start">What you need to start</a></li>
+          <li><a href="#format">Digital, physical, or both?</a></li>
+          <li><a href="#guilt">On gaps and guilt</a></li>
+          <li><a href="#who">Who is this really for?</a></li>
+          <li><a href="#advice">One thing I wish I'd known</a></li>
+          <li><a href="#closing">A letter to my daughter</a></li>
+        </ol>
+      </div>
+
+      <div class="sidebar-app">
+        <div class="sidebar-app-eyebrow">Try it free</div>
+        <h4>Ten minutes a month is enough</h4>
+        <p>Pebblebook sends you a gentle prompt, you answer it. That's it. Your child's story, told one pebble at a time.</p>
+        <a href="../index.html#signup" class="btn-primary">Get early access</a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- MANIFESTO STRIP -->
+  <section class="manifesto">
+    <p class="manifesto-quote">"I wanted to get to know her. From the very beginning, I just wanted to know who she was."</p>
+    <p class="manifesto-tagline">Pebblebook — collect the moments that matter</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-logo">Pebblebook</span>
+    <p>© 2026 Pebblebook. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
