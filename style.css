@@ -648,6 +648,12 @@
       border-radius: 12px;
       overflow: hidden;
     }
+    .blog-card-image {
+      width: 100%;
+      aspect-ratio: 3/2;
+      object-fit: cover;
+      display: block;
+    }
     .blog-card-image-placeholder {
       aspect-ratio: 3/2;
       background: var(--cream-alt);
