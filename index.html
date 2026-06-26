@@ -6,13 +6,13 @@
   <title>PebbleBook</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
   <!-- NAV -->
-  <nav>
+  <nav id="main-nav">
     <a href="index.html" class="nav-logo">
       <img src="assets/pebblebook logo.png" alt="PebbleBook" />
     </a>
@@ -20,8 +20,20 @@
       <li><a href="how-it-works.html">How it works</a></li>
       <li><a href="blog/index.html">Blog</a></li>
     </ul>
-    <a href="#signup" class="nav-cta">Join waitlist</a>
+    <div class="nav-right">
+      <a href="#signup" class="nav-cta">Join waitlist</a>
+      <button class="nav-hamburger" id="nav-toggle" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
+  <div class="nav-mobile-menu" id="nav-mobile-menu">
+    <ul>
+      <li><a href="how-it-works.html">How it works</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="#signup">Join waitlist</a></li>
+    </ul>
+  </div>
 
   <!-- HERO -->
   <section class="hero">
@@ -40,23 +52,64 @@
   <section class="features">
     <div class="features-inner">
       <h2 class="features-heading">Helping you commemorate your children's childhood</h2>
-      <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-number">#1</div>
+
+      <div class="feature-row">
+        <div class="feature-row-image">
+          <img src="assets/Family trip.jpg" alt="Family walking together" />
+        </div>
+        <div class="feature-row-content">
+          <div class="feature-row-eyebrow">
+            <span class="feature-row-num">01</span>
+            <svg width="22" height="26" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+              <ellipse cx="11" cy="22" rx="9" ry="3.5" fill="#84532F"/>
+              <ellipse cx="11" cy="16.5" rx="7" ry="3" fill="#B66239"/>
+              <ellipse cx="11" cy="11.5" rx="5" ry="2.5" fill="#C98A3C"/>
+              <ellipse cx="11" cy="7.5" rx="3.5" ry="2" fill="#E0A964"/>
+            </svg>
+          </div>
           <h3>Gentle nudges</h3>
           <p>We give you nudges so you remember to write down the things we think we will always remember. Just in case we don't.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-number">#2</div>
-          <h3>Built for siblings</h3>
-          <p>The app works beautifully with one child, but we are also built especially for multiple children. You can even enter memories for them all at the same time that is saved individually.</p>
+      </div>
+
+      <div class="feature-row feature-row--reverse">
+        <div class="feature-row-image">
+          <img src="assets/Pebble stack.jpg" alt="Pebble cairn by the sea" />
         </div>
-        <div class="feature-card">
-          <div class="feature-number">#3</div>
+        <div class="feature-row-content">
+          <div class="feature-row-eyebrow">
+            <span class="feature-row-num">02</span>
+            <svg width="22" height="26" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+              <ellipse cx="11" cy="22" rx="9" ry="3.5" fill="#84532F"/>
+              <ellipse cx="11" cy="16.5" rx="7" ry="3" fill="#B66239"/>
+              <ellipse cx="11" cy="11.5" rx="5" ry="2.5" fill="#C98A3C"/>
+              <ellipse cx="11" cy="7.5" rx="3.5" ry="2" fill="#E0A964"/>
+            </svg>
+          </div>
+          <h3>Built for siblings</h3>
+          <p>The app works beautifully with one child, but we are also built especially for multiple children. You can even enter memories for them all at the same time, saved individually.</p>
+        </div>
+      </div>
+
+      <div class="feature-row">
+        <div class="feature-row-image">
+          <img src="assets/Family photo.jpg" alt="Family running in a field" />
+        </div>
+        <div class="feature-row-content">
+          <div class="feature-row-eyebrow">
+            <span class="feature-row-num">03</span>
+            <svg width="22" height="26" viewBox="0 0 22 26" fill="none" aria-hidden="true">
+              <ellipse cx="11" cy="22" rx="9" ry="3.5" fill="#84532F"/>
+              <ellipse cx="11" cy="16.5" rx="7" ry="3" fill="#B66239"/>
+              <ellipse cx="11" cy="11.5" rx="5" ry="2.5" fill="#C98A3C"/>
+              <ellipse cx="11" cy="7.5" rx="3.5" ry="2" fill="#E0A964"/>
+            </svg>
+          </div>
           <h3>Their story, forever</h3>
           <p>Everything accumulates into a living timeline — a record of who they actually were, in their own era, told in your words. Pebble by pebble, a book takes shape.</p>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -69,60 +122,77 @@
     <p class="manifesto-tagline">Pebble by pebble</p>
   </section>
 
-  <!-- PHOTO STRIP -->
-  <div class="photo-strip">
-    <div class="photo-strip-inner">
-            <img src="assets/Family trip.jpg" alt="Family_trip">
-            <img src="assets/Pebble stack.jpg" alt="Pebble_stack">
-            <img src="assets/Family photo.jpg" alt="FamilyPhoto">
-    </div>
-  </div>
-
   <!-- HOW IT WORKS -->
-  <section class="how-it-works">
-    <p class="section-eyebrow">How it works</p>
-    <h2>Four steps to a childhood remembered</h2>
-    <div class="steps">
-      <div class="step">
-        <div class="step-number">1</div>
-        <div class="step-content">
-          <h4>Sign up your children</h4>
-          <p>Create profiles for one child or all of them. PebbleBook is ready for the whole family from day one.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">2</div>
-        <div class="step-content">
-          <h4>Answer a prompt</h4>
-          <p>Choose a child and we'll offer an age-tailored question. Swipe if it doesn't spark anything — we'll find one that does. Or switch to sibling mode and answer for them all at once.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">3</div>
-        <div class="step-content">
-          <h4>We nudge, not shame</h4>
-          <p>Set the commitment level that suits your life. We'll send a gentle reminder now and then — we're here to help, not to judge.</p>
-        </div>
-      </div>
-      <div class="step">
-        <div class="step-number">4</div>
-        <div class="step-content">
-          <h4>Watch the story grow</h4>
-          <p>Everything you write lives in a timeline — your child's story, written pebble by pebble, in your own words.</p>
-        </div>
-      </div>
-    </div>
+  <section class="how-it-works-section">
+    <div class="hiw-inner">
 
-    <div class="prompts">
-      <p class="prompts-label">Example prompts</p>
-      <div class="prompt-cards">
-        <div class="prompt-card">
-          <span>Describe what happened the last time your child tried to play with another kid at the park.</span>
-        </div>
-        <div class="prompt-card">
-          <span>Has [NAME] said something funny lately?</span>
+      <!-- Phone mockup -->
+      <div class="hiw-phone-col">
+        <div class="hiw-phone-frame">
+          <div class="phone-notch"></div>
+          <div class="hiw-phone-screen">
+            <svg width="56" height="68" viewBox="0 0 56 68" fill="none" aria-hidden="true">
+              <ellipse cx="28" cy="58" rx="22" ry="8.5" fill="#84532F"/>
+              <ellipse cx="28" cy="43" rx="17" ry="7.5" fill="#B66239"/>
+              <ellipse cx="28" cy="30" rx="13" ry="6" fill="#C98A3C"/>
+              <ellipse cx="28" cy="19" rx="9" ry="5" fill="#E0A964"/>
+              <ellipse cx="28" cy="10" rx="5.5" ry="4" fill="#CAC4B8"/>
+            </svg>
+            <p class="hiw-phone-label">[ app screenshot ]<br>your child's timeline</p>
+          </div>
         </div>
       </div>
+
+      <!-- Steps -->
+      <div class="hiw-steps-col">
+        <p class="section-eyebrow">How it works</p>
+        <h2 class="hiw-heading">Four steps to a childhood remembered</h2>
+
+        <div class="hiw-step-item">
+          <div class="hiw-step-num">1</div>
+          <div class="hiw-step-body">
+            <h4>Sign up your children</h4>
+            <p>Create profiles for one child or all of them. PebbleBook is ready for the whole family from day one.</p>
+          </div>
+        </div>
+        <hr class="hiw-divider">
+        <div class="hiw-step-item">
+          <div class="hiw-step-num">2</div>
+          <div class="hiw-step-body">
+            <h4>Answer a prompt</h4>
+            <p>Choose a child and we'll offer an age-tailored question. Swipe if it doesn't spark anything — or switch to sibling mode and answer for them all at once.</p>
+          </div>
+        </div>
+        <hr class="hiw-divider">
+        <div class="hiw-step-item">
+          <div class="hiw-step-num">3</div>
+          <div class="hiw-step-body">
+            <h4>We nudge, not shame</h4>
+            <p>Set the commitment level that suits your life. We'll send a gentle reminder now and then — here to help, not to judge.</p>
+          </div>
+        </div>
+        <hr class="hiw-divider">
+        <div class="hiw-step-item">
+          <div class="hiw-step-num">4</div>
+          <div class="hiw-step-body">
+            <h4>Watch the story grow</h4>
+            <p>Everything you write lives in a timeline — your child's story, written pebble by pebble, in your own words.</p>
+          </div>
+        </div>
+
+        <div class="prompts">
+          <p class="prompts-label">Example prompts</p>
+          <div class="prompt-cards">
+            <div class="prompt-card">
+              <span>Describe what happened the last time your child tried to play with another kid at the park.</span>
+            </div>
+            <div class="prompt-card">
+              <span>Has [NAME] said something funny lately?</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -148,6 +218,17 @@
     <p>© 2026 PebbleBook. All rights reserved.</p>
   </footer>
 
+  <script>
+    const toggle = document.getElementById('nav-toggle');
+    const mobileMenu = document.getElementById('nav-mobile-menu');
+    toggle.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => mobileMenu.classList.remove('is-open'));
+    });
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>
     const supabaseUrl = 'https://dvpmjzsbrsdmzuqtsiaz.supabase.co';
