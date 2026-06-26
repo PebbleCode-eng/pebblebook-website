@@ -1,20 +1,20 @@
 /* ─── TOKENS ─────────────────────────────────────────── */
     :root {
-      --teal:   #07455d;
-      --teal-light: #0d5c7a;
-      --gold:   #f1be6c;
-      --gold-dark: #c99940;
-      --cream:  #fdf5ec;
-      --cream-alt: #f5ede0;
-      --blue:   #5b77bc;
-      --green:  #4c6a33;
-      --slate:  #334155;
-      --text:   #1a2e38;
-      --text-muted: #5a7080;
+      --teal:   #B66239;
+      --teal-light: #C98A3C;
+      --gold:   #E0A964;
+      --gold-dark: #B66239;
+      --cream:  #F4ECDD;
+      --cream-alt: #EADDC6;
+      --blue:   #9E988C;
+      --green:  #84532F;
+      --slate:  #403C36;
+      --text:   #2D2823;
+      --text-muted: #6B665E;
       --white:  #ffffff;
 
-      --font-display: 'Cormorant Garamond', Georgia, serif;
-      --font-body:    'DM Sans', system-ui, sans-serif;
+      --font-display: 'Newsreader', Georgia, serif;
+      --font-body:    'Newsreader', Georgia, serif;
 
       --max-w: 1100px;
       --section-pad: 96px 24px;
@@ -42,9 +42,9 @@
       align-items: center;
       justify-content: space-between;
       padding: 18px 40px;
-      background: rgba(253, 245, 236, 0.92);
+      background: rgba(244,236,221,0.92);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(7, 69, 93, 0.08);
+      border-bottom: 1px solid rgba(182,98,57,0.08);
     }
     .nav-logo img {
       height: 32px;
@@ -140,7 +140,7 @@
       background: var(--white);
       border-radius: 36px;
       border: 6px solid var(--teal);
-      box-shadow: 0 32px 80px rgba(7,69,93,0.18);
+      box-shadow: 0 32px 80px rgba(182,98,57,0.18);
       overflow: hidden;
       padding: 28px 20px 36px;
       position: relative;
@@ -237,14 +237,14 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 0;
-      border: 1px solid rgba(7,69,93,0.12);
+      border: 1px solid rgba(182,98,57,0.12);
       border-radius: 12px;
       overflow: hidden;
     }
     .feature-card {
       padding: 40px 32px;
       background: var(--white);
-      border-right: 1px solid rgba(7,69,93,0.12);
+      border-right: 1px solid rgba(182,98,57,0.12);
     }
     .feature-card:last-child {
       border-right: none;
@@ -318,12 +318,12 @@
     }
     .photo-placeholder {
       aspect-ratio: 16/9;
-      background: rgba(7,69,93,0.15);
+      background: rgba(182,98,57,0.15);
       border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: rgba(7,69,93,0.4);
+      color: rgba(182,98,57,0.4);
       font-size: 11px;
       font-weight: 500;
       letter-spacing: 0.1em;
@@ -356,7 +356,7 @@
       padding: 28px;
       border-radius: 12px;
       background: var(--white);
-      border: 1px solid rgba(7,69,93,0.08);
+      border: 1px solid rgba(182,98,57,0.08);
     }
     .step-number {
       font-family: var(--font-display);
@@ -439,17 +439,17 @@
     }
     .blob-1 {
       width: 360px; height: 360px;
-      background: rgba(91,119,188,0.12);
+      background: rgba(158,152,140,0.12);
       top: -100px; left: -80px;
     }
     .blob-2 {
       width: 280px; height: 280px;
-      background: rgba(76,106,51,0.1);
+      background: rgba(132,83,47,0.1);
       bottom: -80px; left: 60px;
     }
     .blob-3 {
       width: 200px; height: 200px;
-      background: rgba(241,190,108,0.18);
+      background: rgba(224,169,100,0.18);
       top: 40px; right: -40px;
     }
     .signup-inner {
@@ -479,7 +479,7 @@
       margin: 0 auto 16px;
       border-radius: 40px;
       overflow: hidden;
-      box-shadow: 0 8px 32px rgba(7,69,93,0.15);
+      box-shadow: 0 8px 32px rgba(182,98,57,0.15);
     }
     .signup-form input {
       flex: 1;
@@ -541,7 +541,7 @@
       .hero-text p { max-width: 100%; }
       .hero-phone { margin-top: 20px; }
       .features-grid { grid-template-columns: 1fr; border-radius: 8px; }
-      .feature-card { border-right: none; border-bottom: 1px solid rgba(7,69,93,0.12); }
+      .feature-card { border-right: none; border-bottom: 1px solid rgba(182,98,57,0.12); }
       .feature-card:last-child { border-bottom: none; }
       .steps { grid-template-columns: 1fr; }
       .photo-strip-inner { grid-template-columns: 1fr; }
@@ -558,7 +558,7 @@
       padding: 160px 40px 80px;
       max-width: var(--max-w);
       margin: 0 auto;
-      border-bottom: 1px solid rgba(7,69,93,0.08);
+      border-bottom: 1px solid rgba(182,98,57,0.08);
     }
     .subpage-hero .section-eyebrow { margin-bottom: 16px; }
     .subpage-hero h1 {
@@ -589,7 +589,7 @@
       grid-template-columns: 80px 1fr;
       gap: 40px;
       padding: 56px 0;
-      border-bottom: 1px solid rgba(7,69,93,0.08);
+      border-bottom: 1px solid rgba(182,98,57,0.08);
     }
     .hiw-step:last-child { border-bottom: none; }
     .hiw-step-number {
@@ -644,7 +644,7 @@
     }
     .blog-card {
       background: var(--white);
-      border: 1px solid rgba(7,69,93,0.08);
+      border: 1px solid rgba(182,98,57,0.08);
       border-radius: 12px;
       overflow: hidden;
     }
@@ -664,7 +664,7 @@
       font-weight: 500;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      color: rgba(7,69,93,0.3);
+      color: rgba(182,98,57,0.3);
     }
     .blog-card-body { padding: 24px; }
     .blog-card-date {
@@ -715,7 +715,7 @@
       max-width: 400px;
       border-radius: 40px;
       overflow: hidden;
-      box-shadow: 0 8px 32px rgba(7,69,93,0.15);
+      box-shadow: 0 8px 32px rgba(182,98,57,0.15);
     }
     .hero-form input {
       flex: 1;
