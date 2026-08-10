@@ -3,21 +3,169 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Parenting & Memory Journaling Blog — PebbleBook</title>
-  <meta name="description" content="Read thoughts on parenting, capturing baby milestones, solving the second child memory gap, and making family stories last." />
+  <title>Journal & Essays — PebbleBook</title>
+  <meta name="description" content="Essays and guides on parenting, memory, capturing childhood milestones, and solving the second-child gap." />
   <link rel="canonical" href="https://pebblebook.com/blog/" />
 
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PebbleBook Journal — On Memory, Childhood, and the Stories We Keep" />
+  <meta property="og:description" content="Essays and practical guides on parenting, remembering, and capturing the fleeting details of everyday life." />
+  <meta property="og:image" content="../assets/pebblebook-icon.png" />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Shared CSS stylesheet -->
+  <link rel="stylesheet" href="../styles.css" />
+
+  <style>
+    /* Inline overrides specific to the Blog Index */
+    .blog-header {
+      padding: 160px 40px 60px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .blog-header h1 {
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 500;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      margin-bottom: 20px;
+      color: #1a1a1a;
+    }
+
+    .blog-header p {
+      font-size: 19px;
+      color: #666;
+      max-width: 580px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .blog-grid-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 40px 120px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 40px;
+    }
+
+    .blog-card {
+      background: #fbfbf9;
+      border: 1px solid #e8e7e3;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+    }
+
+    .blog-card-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      background-color: #f2f1ed;
+    }
+
+    .blog-card-placeholder {
+      width: 100%;
+      height: 220px;
+      background-color: #f2f1ed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #888;
+      font-style: italic;
+      font-size: 14px;
+    }
+
+    .blog-card-body {
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .blog-card-date {
+      font-family: 'Spline Sans Mono', monospace;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 12px;
+    }
+
+    .blog-card-title {
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 500;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      color: #1a1a1a;
+    }
+
+    .blog-card-title a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .blog-card-title a:hover {
+      text-decoration: underline;
+    }
+
+    .blog-card-excerpt {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 24px;
+      flex-grow: 1;
+    }
+
+    .blog-card-link {
+      font-family: 'Familjen Grotesk', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #222523;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .blog-card-link:hover {
+      text-decoration: underline;
+    }
+
+    .blog-card-link.disabled {
+      color: #aaa;
+      cursor: default;
+    }
+
+    .blog-card-link.disabled:hover {
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
   <!-- NAVIGATION -->
   <nav>
     <a href="../index.html" class="nav-logo">
-      <img src="../assets/pebblebook logo.png" alt="PebbleBook" />
+      <img src="../assets/pebblebook logo.png" alt="PebbleBook mark" />
     </a>
     <ul class="nav-links">
       <li><a href="../how-it-works.html">How it works</a></li>
@@ -27,8 +175,8 @@
   </nav>
 
   <!-- BLOG HERO -->
-  <header class="subpage-hero">
-    <p class="section-eyebrow">From the Journal</p>
+  <header class="blog-header">
+    <p class="meta-tag" style="font-family: 'Spline Sans Mono', monospace; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase; color: #888; margin-bottom: 12px;">From the Journal</p>
     <h1>On memory, childhood, and the stories we keep</h1>
     <p>Essays and practical guides on parenting, remembering, and capturing the fleeting details of everyday life.</p>
   </header>
@@ -37,58 +185,55 @@
   <section class="blog-grid-section">
     <div class="blog-grid">
 
-      <!-- Featured Article -->
+      <!-- Article 1: Featured -->
       <article class="blog-card">
-        <!-- [IMAGE PLACEHOLDER: Childhood journal image] -->
         <img src="../assets/Childhood_memory_book.jpg" alt="Childhood memory book and photo journal" class="blog-card-image" />
         <div class="blog-card-body">
           <p class="blog-card-date">June 2026</p>
-          <h2 class="blog-card-title">How to Document Your Child's Milestones Without Losing Track</h2>
+          <h2 class="blog-card-title">
+            <a href="how-to-document-milestones.html">How to Document Your Child's Milestones Without Losing Track</a>
+          </h2>
           <p class="blog-card-excerpt">A practical guide to capturing developmental milestones, daily quotes, and why 10 minutes a month is genuinely enough.</p>
           <a href="how-to-document-milestones.html" class="blog-card-link">Read article →</a>
         </div>
       </article>
 
-      <!-- Placeholder Article 2 -->
+      <!-- Article 2: Why I Built PebbleBook -->
       <article class="blog-card">
         <img src="../assets/Pebble stack.jpg" alt="Pebble stack reflecting memory collection" class="blog-card-image" />
         <div class="blog-card-body">
           <p class="blog-card-date">August 2026</p>
-    
-      <!-- Title Link -->
           <h2 class="blog-card-title">
-          <a href="why-i-built-pebblebook.html">Why I Built PebbleBook: The Fear of Forgetting</a>
+            <a href="why-i-built-pebblebook.html">Why I Built PebbleBook: The Fear of Forgetting</a>
           </h2>
-          < p class="blog-card-excerpt"> The emotional story behind PebbleBook—why we lose our kids' smallest moments, and how Sibling Mode ensures no child gets left out.</p>
-    
-    <!-- Action Link -->
+          <p class="blog-card-excerpt">The emotional story behind PebbleBook—why we lose our kids' smallest moments, and how Sibling Mode ensures no child gets left out.</p>
           <a href="why-i-built-pebblebook.html" class="blog-card-link">Read story →</a>
         </div>
-    </article>
+      </article>
 
-      
+      <!-- Article 3: Coming Soon -->
       <article class="blog-card">
-        <div style="background: var(--oat); aspect-ratio: 3/2; display: flex; align-items: center; justify-content: center; color: var(--pebble); font-style: italic;">
-          [IMAGE PLACEHOLDER: Siblings photo]
+        <div class="blog-card-placeholder">
+          [ Siblings Photo ]
         </div>
         <div class="blog-card-body">
           <p class="blog-card-date">Coming Soon</p>
           <h2 class="blog-card-title">The "Second Child" Memory Gap — And How to Solve It</h2>
           <p class="blog-card-excerpt">Why parents document later children less, and low-friction methods to ensure every sibling gets their story recorded.</p>
-          <span class="blog-card-link" style="opacity: 0.5;">Coming soon</span>
+          <span class="blog-card-link disabled">Coming soon</span>
         </div>
       </article>
 
-      <!-- Placeholder Article 3 -->
+      <!-- Article 4: Coming Soon -->
       <article class="blog-card">
-        <div style="background: var(--oat); aspect-ratio: 3/2; display: flex; align-items: center; justify-content: center; color: var(--pebble); font-style: italic;">
-          [IMAGE PLACEHOLDER: Parent reading to child]
+        <div class="blog-card-placeholder">
+          [ Parent Reading to Child ]
         </div>
         <div class="blog-card-body">
           <p class="blog-card-date">Coming Soon</p>
           <h2 class="blog-card-title">The Question Every Child Will Eventually Ask</h2>
-          <p class="blog-card-excerpt">"Who was I before I could remember myself?" How tiny weekly entries become a priceless personal history.</p>
-          <span class="blog-card-link" style="opacity: 0.5;">Coming soon</span>
+          <p class="blog-card-excerpt">“Who was I before I could remember myself?” How tiny weekly entries become a priceless personal history.</p>
+          <span class="blog-card-link disabled">Coming soon</span>
         </div>
       </article>
 
@@ -98,7 +243,7 @@
   <!-- FOOTER -->
   <footer>
     <img src="../assets/pebblebook logo.png" alt="PebbleBook" />
-    <p>© 2026 PebbleBook. All rights reserved.</p>
+    <p>© 2026 PebbleBook. A quiet journal for future children.</p>
   </footer>
 
 </body>
