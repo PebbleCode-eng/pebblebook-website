@@ -3,23 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PebbleBook — A Keepsake Journal for Your Children</title>
-  <meta name="description" content="A 90-second evening journal for tired parents. Capture the small mementos and daily stories that feed a beautiful printed book for your future children." />
+  <title>PebbleBook — A Childhood Remembered, Pebble by Pebble</title>
+  <meta name="description" content="A place to write short notes about your children, so that you remember the details once the chaos simmers down." />
   <link rel="canonical" href="https://pebblebook.com/" />
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="PebbleBook — Substack for your future children." />
+  <meta property="og:title" content="PebbleBook — A Childhood Remembered, Pebble by Pebble" />
   <meta property="og:description" content="A quiet, 90-second evening journal that turns brief memories into a physical keepsake book." />
   <meta property="og:image" content="assets/pebblebook-icon.png" />
 
-  <!-- Fonts: Familjen Grotesk (UI/Display), Newsreader (Parent Writing/Serif), Spline Sans Mono (Meta) -->
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
 
-  <!-- External Stylesheet -->
+  <!-- Shared CSS stylesheet -->
   <link rel="stylesheet" href="styles.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "PebbleBook",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "LifestyleApplication",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "A quiet, 90-second evening memory journal for busy parents."
+  }
+  </script>
 </head>
 <body>
 
@@ -29,7 +41,7 @@
       <img src="assets/pebblebook logo.png" alt="PebbleBook mark" />
     </a>
     <ul class="nav-links">
-      <li><a href="#how-it-works">How it works</a></li>
+      <li><a href="how-it-works.html">How it works</a></li>
       <li><a href="blog/index.html">Blog</a></li>
     </ul>
     <a href="#signup" class="nav-cta">Join waitlist</a>
@@ -39,8 +51,8 @@
   <header class="hero">
     <div class="hero-text">
       <p class="meta-tag">Launching Fall 2026 • iOS & Android</p>
-      <h1>substack for your future children.</h1>
-      <p class="hero-sub">A place a parent writes short notes about their children, so that those children can one day read them.</p>
+      <h1>A childhood remembered. Pebble by pebble.</h1>
+      <p class="hero-sub">A place to write short notes about your children, so that you remember the details once the chaos simmers down.</p>
       <a href="#signup" class="nav-cta hero-cta">Get Early Access</a>
     </div>
 
@@ -55,12 +67,12 @@
     </div>
   </header>
 
-  <!-- THREE PILLARS -->
+  <!-- THREE PILLARS / SPECIFICATION -->
   <section class="pillars-section">
     <div class="pillars-inner">
       <article class="pillar-card">
         <h3>Ninety seconds</h3>
-        <p>Opened once, in the evening, in bed, in the dark. Write a single sentence or grab a quick prompt before closing your phone.</p>
+        <p>Opened whenever you have a moment, and write a single sentence or grab a quick prompt before closing your phone.</p>
       </article>
 
       <article class="pillar-card">
@@ -85,70 +97,35 @@
     </div>
   </section>
 
-  <!-- UPDATED HOW IT WORKS SECTION -->
-  <section class="how-it-works-section" id="how-it-works">
-    <div class="how-it-works-header">
-      <p class="meta-tag">The PebbleBook Routine</p>
-      <h2>How it works in 90 seconds a day.</h2>
-      <p>No complicated setups, no daily pressure. A simple process designed to fit around exhausted evenings.</p>
+  <!-- SHORT PREVIEW LINK TO HOW IT WORKS PAGE -->
+  <section class="routine-section">
+    <div class="routine-header">
+      <p class="meta-tag">Simple & Guilt-Free</p>
+      <h2>Built for real life with children.</h2>
     </div>
 
-    <div class="steps-grid">
-      <!-- Step 1 -->
-      <article class="step-card">
-        <div class="step-meta">
-          <span class="step-number">01 / CAPTURE</span>
-          <span class="step-tag">Evening Routine</span>
-        </div>
-        <div class="step-body">
-          <h3>Write a sentence or pick a prompt</h3>
-          <p>Open the app at bedtime. Record a funny phrase, a cozy detail, or let a targeted age-appropriate question guide your memory.</p>
-        </div>
-        <div class="prompt-preview-box">
-          “What did Finn refuse to take off today?”
-        </div>
-      </article>
+    <div class="routine-grid">
+      <div class="routine-step">
+        <span class="routine-num">01</span>
+        <h4>Open in the dark</h4>
+        <p>No bright displays or noisy dashboards. Designed specifically for tired parents holding a sleeping child with one hand.</p>
+      </div>
 
-      <!-- Step 2 -->
-      <article class="step-card">
-        <div class="step-meta">
-          <span class="step-number">02 / SIBLING EQUITY</span>
-          <span class="step-tag">Multi-Child</span>
-        </div>
-        <div class="step-body">
-          <h3>Tag one child or all of them</h3>
-          <p>Eliminate the second-child gap. Easily assign an entry to one specific child or tag all siblings at once when answering joint family prompts.</p>
-        </div>
-        <div class="pills-group">
-          <span class="child-pill lea">Lea</span>
-          <span class="child-pill finn">Finn</span>
-          <span class="child-pill nora">Nora</span>
-        </div>
-      </article>
+      <div class="routine-step">
+        <span class="routine-num">02</span>
+        <h4>Write or take a prompt</h4>
+        <p>Write a quick sentence about today. Blank? Take an age-appropriate question like, <em>“What did Finn insist on wearing today?”</em></p>
+      </div>
 
-      <!-- Step 3 -->
-      <article class="step-card">
-        <div class="step-meta">
-          <span class="step-number">03 / GUILT-FREE</span>
-          <span class="step-tag">Zero Streaks</span>
-        </div>
-        <div class="step-body">
-          <h3>No streak counts or red badges</h3>
-          <p>Life with kids is unpredictable. Skip three weeks without penalty or guilt. Your pebble timeline is designed to look complete regardless of gaps.</p>
-        </div>
-      </article>
+      <div class="routine-step">
+        <span class="routine-num">03</span>
+        <h4>Zero blank-page shame</h4>
+        <p>PebbleBook never displays red warning badges or streak counters. Missed three weeks? Pick right back up whenever you have 30 seconds.</p>
+      </div>
+    </div>
 
-      <!-- Step 4 -->
-      <article class="step-card">
-        <div class="step-meta">
-          <span class="step-number">04 / PRINT & KEEP</span>
-          <span class="step-tag">Physical Heirloom</span>
-        </div>
-        <div class="step-body">
-          <h3>Export to a bound hardcover book</h3>
-          <p>When you're ready, turn digital entries into a beautifully designed physical book for your child to read when they grow up.</p>
-        </div>
-      </article>
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="how-it-works.html" class="nav-cta hero-cta">See how PebbleBook works →</a>
     </div>
   </section>
 
