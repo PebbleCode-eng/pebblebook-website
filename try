@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pebble — Get the App</title>
+  
+  <!-- Typography matching brand specifications -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="styles (2).css">
+
+  <script>
+    // Replace with your actual App Store listing URL
+    const APP_STORE_URL = "https://apps.apple.com/app/id000000000"; 
+
+    function detectAndRedirect() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      
+      // Check if user is on an iOS device (iPhone/iPod/iPad)
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = APP_STORE_URL;
+      }
+    }
+
+    // Attempt automatic redirect immediately
+    detectAndRedirect();
+  </script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <div class="nav-logo">
+      <span style="font-family: var(--font-sans); font-weight: 600; font-size: 18px; letter-spacing: -0.02em;">Pebble</span>
+    </div>
+    <a href="https://apps.apple.com/app/id000000000" class="nav-cta">Download App</a>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <main class="hero">
+    <div class="hero-content">
+      <div class="meta-tag">iOS App</div>
+      <h1>Every memory, captured effortlessly.</h1>
+      <p class="hero-sub">Redirecting you to the App Store for iPhone. If you are not redirected automatically, tap below.</p>
+      
+      <a href="https://apps.apple.com/app/id000000000" class="nav-cta hero-cta">Open in App Store</a>
+    </div>
+
+    <!-- CARD SPECIMEN GRAPHIC -->
+    <div class="journal-specimen">
+      <div class="specimen-meta">
+        <span class="child-pill lea">Lea</span>
+        <span class="specimen-date">Today</span>
+      </div>
+      <div class="specimen-entry">
+        "She picked up a tiny river stone, handed it to me, and whispered, 'Keep this safe for my collection.'"
+      </div>
+      <svg class="specimen-pebble pebble-opacity" viewBox="0 0 28 14">
+        <ellipse cx="14" cy="7" rx="14" ry="7" />
+      </svg>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>&copy; Pebble. All rights reserved.</div>
+    <div class="meta-tag" style="margin-bottom: 0;">thepebblebook.com</div>
+  </footer>
+
+</body>
+</html>
