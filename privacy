@@ -1,1 +1,226 @@
-#this will be created
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy — PebbleBook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&family=Newsreader:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --chalk: #FCFCFA;
+    --shore: #EFF0EC;
+    --wash: #E4E7E1;
+    --silt: #DDDFD8;
+    --lichen: #6E756B;
+    --basalt: #232724;
+    --accent-mark: #2A6A8C;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --chalk: #191D20;
+      --shore: #101315;
+      --wash: #232A2D;
+      --silt: #2A3034;
+      --lichen: #99A19F;
+      --basalt: #E8EAE6;
+      --accent-mark: #A8CFE4;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--shore);
+    color: var(--basalt);
+    font-family: 'Familjen Grotesk', system-ui, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  header {
+    margin-bottom: 40px;
+  }
+  h1 {
+    font-family: 'Familjen Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 34px;
+    letter-spacing: -0.025em;
+    margin: 0 0 8px;
+    color: var(--basalt);
+  }
+  .updated {
+    color: var(--lichen);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .summary {
+    background: var(--chalk);
+    border: 1px solid var(--silt);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 32px 0 40px;
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--basalt);
+  }
+  h2 {
+    font-family: 'Familjen Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    margin: 48px 0 12px;
+    padding-top: 24px;
+    border-top: 1px solid var(--silt);
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  h3 {
+    font-family: 'Familjen Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 24px 0 6px;
+    color: var(--basalt);
+  }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent-mark); }
+  .note {
+    font-size: 13.5px;
+    color: var(--lichen);
+    background: var(--chalk);
+    border-left: 2px solid var(--silt);
+    padding: 10px 14px;
+    margin: 12px 0;
+    border-radius: 2px;
+  }
+  strong { font-weight: 600; }
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--silt);
+    color: var(--lichen);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Privacy Policy</h1>
+  <div class="updated">PebbleBook · Last updated [DATE]</div>
+</header>
+
+<div class="summary">
+  PebbleBook lets you, as a parent, write short memories about your children, which can later become a printed or digital book. We store what you write, the photos you attach, and information about your children and family — solely to deliver this service to you. We don't sell your information, and we only share it with the small number of services that help us run the app.
+</div>
+
+<h2>1. Who is responsible for your information</h2>
+<p>PebbleBook is operated by Dalen Digital (a Norwegian sole proprietorship), org. no. 938 259 364, and is the data controller for the personal data collected through the app.</p>
+<p>Contact: <a href="mailto:hei@thepebblebook.com">hei@thepebblebook.com</a></p>
+
+<h2>2. What information do we collect</h2>
+
+<h3>Account information</h3>
+<p>When you create an account, we collect your email address and any other information you provide during sign-up and login (authentication via Supabase).</p>
+
+<h3>Family and membership information</h3>
+<p>Information related to your family in the app, including who its members are, and any invitations you send to other family members (the invitee's email address).</p>
+
+<h3>Information about children</h3>
+<p>For each child you add to the app, the following may be stored:</p>
+<ul>
+  <li>Name</li>
+  <li>Date of birth/age</li>
+  <li>Growth data (height, weight, etc.), if you choose to use this feature</li>
+</ul>
+
+<h3>Memories</h3>
+<p>Text notes and photos you write or upload about your children, including when they were written and which children they are linked to.</p>
+
+<h3>Notification preferences</h3>
+<p>Your choices about whether and how often you want to receive notifications from the app.</p>
+
+<h3>Purchase and subscription information</h3>
+<ul>
+  <li><strong>Digital book:</strong> You can purchase the digital PDF book (currently €29), which you own outright once purchased. This is currently processed by a third-party payment provider <span class="note" style="display:inline">[provider to be confirmed]</span>. We receive confirmation the purchase was completed, but not your card details.</li>
+  <li><strong>Subscription:</strong> PebbleBook also offers an optional subscription — monthly (€4.99), yearly ($39), or lifetime ($199) — managed through RevenueCat, with billing processed via the Apple App Store or Google Play. We receive your subscription status (active, cancelled, expired) and billing period, but not your card details.</li>
+  <li><strong>Gifted months:</strong> If you gift free months to someone else, we collect the recipient's email address to apply the gift and notify them.</li>
+</ul>
+
+<h3>Technical information</h3>
+<p>Basic information that may be collected automatically when you use the app, such as device type and error/crash reports, to operate and troubleshoot the service.</p>
+<p>We currently do not use any third-party analytics or tracking tools in the app. If this changes, we will update this policy before such tools are introduced.</p>
+
+<h2>3. What we use the information for</h2>
+<ul>
+  <li>Delivering the core functionality of the app (storing and displaying memories, managing families and children)</li>
+  <li>Sending the notifications you've requested</li>
+  <li>Processing book purchases and subscriptions, including gifted months</li>
+  <li>Communicating with you about your account (e.g. family invitations)</li>
+  <li>Troubleshooting and improving the app</li>
+  <li>Complying with legal obligations</li>
+</ul>
+
+<h2>4. Legal basis for processing</h2>
+<ul>
+  <li><strong>Contract</strong> — to deliver the service you've requested (GDPR Art. 6(1)(b))</li>
+  <li><strong>Consent</strong> — for optional features, e.g. notifications (Art. 6(1)(a))</li>
+  <li><strong>Legitimate interest</strong> — for troubleshooting and security (Art. 6(1)(f))</li>
+</ul>
+
+<h2>5. Sharing information with third parties</h2>
+<p>We don't share your information for marketing purposes. We use the following processors to operate the service:</p>
+<ul>
+  <li><strong>Supabase</strong> — database storage, authentication, and file storage (photos). Hosted in the EU (Stockholm, Sweden), so this data does not leave the EEA.</li>
+  <li><strong>Resend</strong> — sending emails (e.g. family invitations)</li>
+  <li><strong>[Third-party payment provider, to be confirmed]</strong> — processing the one-time book purchase</li>
+  <li><strong>RevenueCat</strong> — managing subscription status and entitlements</li>
+  <li><strong>Apple / Google</strong> — handling billing for the subscription via the App Store / Google Play</li>
+</ul>
+<div class="note">If Resend, the book payment provider, or RevenueCat process data outside the EEA, we may need to reference a transfer mechanism such as Standard Contractual Clauses (SCCs). The same applies to Apple/Google's handling of subscription billing data.</div>
+
+<h2>6. How long we keep information</h2>
+<p>We retain your information for as long as your account is active.</p>
+<ul>
+  <li>If your subscription lapses, you keep full read access to everything you've already written for one year, but you can no longer add new memories during that time.</li>
+  <li>After that year, photos are deleted; your written text memories remain accessible.</li>
+  <li>If you remove a child from the app, memories linked to that child are retained in anonymized/de-identified form within siblings' memories, so shared memories aren't lost for other family members.</li>
+  <li>If you delete your account entirely, your personal data is deleted in line with our internal procedures.</li>
+</ul>
+
+<h2>7. A note on children's personal data</h2>
+<p>PebbleBook is designed for parents to write about their children — children themselves don't create accounts or use the app directly. Information about children (name, growth data, text) is entered and controlled by the parent or guardian using the app. We handle this information with the same level of protection as other personal data, and encourage parents to think carefully about what they share, especially through family-sharing features.</p>
+
+<h2>8. Your rights</h2>
+<ul>
+  <li>Access the information we hold about you and your children</li>
+  <li>Have inaccurate information corrected</li>
+  <li>Have information deleted ("the right to be forgotten")</li>
+  <li>Receive your information in a structured, portable format</li>
+  <li>Lodge a complaint with the Norwegian Data Protection Authority (Datatilsynet, <a href="https://www.datatilsynet.no" target="_blank" rel="noopener">datatilsynet.no</a>) if you believe our processing violates the rules</li>
+</ul>
+<p>You can delete your account directly in the app under Settings, or by contacting us at <a href="mailto:hei@thepebblebook.com">hei@thepebblebook.com</a>.</p>
+
+<h2>9. Security</h2>
+<p>We use access controls (row-level security) in the database to ensure only members of your family can access your information and memories.</p>
+
+<h2>10. Changes to this policy</h2>
+<p>We may update this privacy policy from time to time. We'll notify you in the app of any significant changes.</p>
+
+<h2>11. Contact</h2>
+<p>Questions about privacy can be directed to <a href="mailto:hei@thepebblebook.com">hei@thepebblebook.com</a>.</p>
+
+<footer>
+  PebbleBook is operated by Dalen Digital, org. no. 938 259 364, Norway.
+</footer>
+
+</div>
+</body>
+</html>
