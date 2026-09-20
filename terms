@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms & Conditions — PebbleBook</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600&family=Newsreader:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --chalk: #FCFCFA;
+    --shore: #EFF0EC;
+    --wash: #E4E7E1;
+    --silt: #DDDFD8;
+    --lichen: #6E756B;
+    --basalt: #232724;
+    --accent-mark: #2A6A8C;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --chalk: #191D20;
+      --shore: #101315;
+      --wash: #232A2D;
+      --silt: #2A3034;
+      --lichen: #99A19F;
+      --basalt: #E8EAE6;
+      --accent-mark: #A8CFE4;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--shore);
+    color: var(--basalt);
+    font-family: 'Familjen Grotesk', system-ui, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+  }
+  .wrap {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 64px 24px 96px;
+  }
+  header { margin-bottom: 40px; }
+  h1 {
+    font-family: 'Familjen Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 34px;
+    letter-spacing: -0.025em;
+    margin: 0 0 8px;
+    color: var(--basalt);
+  }
+  .updated {
+    color: var(--lichen);
+    font-size: 13px;
+    letter-spacing: 0.02em;
+  }
+  .summary {
+    background: var(--chalk);
+    border: 1px solid var(--silt);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 32px 0 40px;
+    font-family: 'Newsreader', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--basalt);
+  }
+  h2 {
+    font-family: 'Familjen Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    margin: 48px 0 12px;
+    padding-top: 24px;
+    border-top: 1px solid var(--silt);
+  }
+  h2:first-of-type { border-top: none; padding-top: 0; }
+  h3 {
+    font-family: 'Familjen Grotesk', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    margin: 24px 0 6px;
+    color: var(--basalt);
+  }
+  p { margin: 0 0 14px; }
+  ul { margin: 0 0 14px; padding-left: 20px; }
+  li { margin-bottom: 6px; }
+  a { color: var(--accent-mark); }
+  .note {
+    font-size: 13.5px;
+    color: var(--lichen);
+    background: var(--chalk);
+    border-left: 2px solid var(--silt);
+    padding: 10px 14px;
+    margin: 12px 0;
+    border-radius: 2px;
+  }
+  strong { font-weight: 600; }
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--silt);
+    color: var(--lichen);
+    font-size: 13px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>Terms & Conditions</h1>
+  <div class="updated">PebbleBook · Last updated [DATE]</div>
+</header>
+
+<div class="summary">
+  These terms cover your use of the PebbleBook app, the digital book you can purchase, and the optional subscription. By using PebbleBook, you agree to them. If anything here is unclear, write to us — we'd rather explain plainly than hide behind legal language.
+</div>
+
+<h2>1. About us</h2>
+<p>PebbleBook is operated by Dalen Digital, a Norwegian sole proprietorship, org. no. 938 259 364 ("we", "us"). These terms are a contract between you and Dalen Digital.</p>
+<p>Contact: <a href="mailto:hei@thepebblebook.com">hei@thepebblebook.com</a></p>
+
+<h2>2. The service</h2>
+<p>PebbleBook is an app that lets you write and store short memories about your children, and turn them into a digital or printed book. The app is the capture tool; the book is the product it feeds.</p>
+
+<h2>3. Accounts</h2>
+<ul>
+  <li>You must provide accurate information when creating an account, and keep your login details secure.</li>
+  <li>You're responsible for activity that happens under your account.</li>
+  <li>You must be an adult to create an account. Information about your children is entered and controlled by you, not by them.</li>
+</ul>
+
+<h2>4. Purchases and subscriptions</h2>
+
+<h3>Digital book</h3>
+<p>You can purchase the digital PDF book as a one-time purchase (currently €29). Once purchased, it's yours to keep and download; this is not a subscription and does not renew.</p>
+
+<h3>Subscription</h3>
+<p>PebbleBook offers an optional subscription with the following tiers:</p>
+<ul>
+  <li>Monthly — €4.99</li>
+  <li>Yearly — $39</li>
+  <li>Lifetime — $199 (a one-time payment for indefinite access, for as long as PebbleBook operates as a service; see note below)</li>
+</ul>
+<div class="note">Prices are currently shown in a mix of currencies depending on tier. If you're presented with a different currency or amount at checkout, the price shown in the app or app store at the time of purchase governs.</div>
+<p>Monthly and yearly subscriptions automatically renew until cancelled. Billing is handled by the Apple App Store or Google Play, and is subject to their respective terms. You can cancel at any time through your Apple or Google account settings; cancellation takes effect at the end of the current billing period.</p>
+<p><strong>A "lifetime" subscription lasts for as long as PebbleBook continues to operate as a service.</strong> It is not a guarantee that the service will exist forever. If we ever have to discontinue PebbleBook, we'll aim to give lifetime subscribers reasonable notice and a way to export their content, as described in Section 9.</p>
+
+<h3>If your subscription lapses</h3>
+<ul>
+  <li>You keep full read access to everything you've already written for one year after your subscription ends.</li>
+  <li>You cannot add new memories while lapsed.</li>
+  <li>After that year, photos attached to your memories are deleted; your written text remains accessible.</li>
+  <li>Resubscribing at any point restores full functionality.</li>
+</ul>
+
+<h3>Gifted months</h3>
+<p>You can gift free months of subscription to someone else. To do this, we ask for their email address so we can apply the gift and notify them. Gifted months cannot be exchanged for cash or transferred to a different purpose.</p>
+
+<h2>5. Right of withdrawal (EU/EEA consumers)</h2>
+<p>If you're a consumer in the EU/EEA, you normally have a 14-day right to withdraw from a purchase of digital content without giving a reason. For the digital book and subscriptions, this right may end earlier if you expressly ask us to begin providing the content immediately and confirm that you understand you'll lose your right of withdrawal once delivery starts. Where the app or store checkout asks for this confirmation, your purchase is subject to it.</p>
+<div class="note">This section needs to be reviewed against current Norwegian/EU consumer law before launch, and matched to exactly what the checkout flow asks the customer to confirm at the point of purchase.</div>
+
+<h2>6. Your content</h2>
+<p>You own what you write and upload to PebbleBook. We don't claim ownership of your memories, photos, or any other content you add.</p>
+<p>By uploading content, you give us a limited license to store, process, and display it back to you (and to other members of your family group, if you've added them) so we can provide the service. We don't use your content for anything else, including training AI models, marketing, or sharing with third parties beyond what's described in our <a href="/privacy">Privacy Policy</a>.</p>
+<p>You're responsible for making sure you have the right to upload any photos or content you add (for example, that you have permission from anyone else who appears in them).</p>
+
+<h2>7. Acceptable use</h2>
+<p>Please don't use PebbleBook to:</p>
+<ul>
+  <li>Upload content that is illegal, abusive, or infringes someone else's rights</li>
+  <li>Attempt to access another user's account or data without permission</li>
+  <li>Interfere with or disrupt the app or its infrastructure</li>
+  <li>Use the app for any purpose other than personal, non-commercial family memory-keeping</li>
+</ul>
+<p>We may suspend or terminate accounts that violate these terms.</p>
+
+<h2>8. Intellectual property</h2>
+<p>The PebbleBook app, its design, branding, and underlying software belong to Dalen Digital and are protected by copyright and other applicable laws. These terms don't grant you any rights to our intellectual property beyond what's needed to use the app as intended.</p>
+
+<h2>9. If the service changes or ends</h2>
+<p>We may update, change, or discontinue features of PebbleBook over time. If we ever discontinue the service entirely, we will aim to notify active users in advance and provide a way to export your written memories and photos before the service closes.</p>
+
+<h2>10. Disclaimers and limitation of liability</h2>
+<p>PebbleBook is provided "as is." While we take reasonable care to keep the service running and your data safe, we can't guarantee it will always be error-free or uninterrupted.</p>
+<p>To the extent permitted by law, Dalen Digital is not liable for indirect or consequential losses arising from your use of the app. Nothing in these terms limits any liability that cannot be excluded under applicable consumer protection law.</p>
+
+<h2>11. Termination</h2>
+<p>You can stop using PebbleBook and delete your account at any time, in the app under Settings or by contacting us. Sections of these terms that by their nature should survive termination (such as intellectual property and limitation of liability) will continue to apply.</p>
+
+<h2>12. Changes to these terms</h2>
+<p>We may update these terms from time to time. If we make significant changes, we'll notify you in the app.</p>
+
+<h2>13. Governing law</h2>
+<p>These terms are governed by Norwegian law. If you're a consumer resident in the EU/EEA, you also keep any mandatory consumer protections provided by the law of your country of residence.</p>
+
+<h2>14. Contact</h2>
+<p>Questions about these terms can be directed to <a href="mailto:hei@thepebblebook.com">hei@thepebblebook.com</a>.</p>
+
+<footer>
+  PebbleBook is operated by Dalen Digital, org. no. 938 259 364, Norway.
+</footer>
+
+</div>
+</body>
+</html>
